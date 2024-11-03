@@ -1,0 +1,13 @@
+{
+  "languageserver": {
+    "clangd": {
+      "command": "clangd",
+      "rootPatterns": ["compile_flags.txt", "compile_commands.json"],
+      "filetypes": ["c", "cc", "cpp", "c++", "objc", "objcpp", "cxx"]
+    }
+  },
+  "semanticTokens.enable": true,
+  "semanticTokens.filetypes": ["c", "cpp", "c++", "py", "sh", "lua"],
+  "inlayHint.enable": true
+}
+
