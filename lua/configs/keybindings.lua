@@ -19,7 +19,7 @@ local mouse_toggle = function()
     vim.o.mouse = ""
   end
 end
-map("", "<F10>", mouse_toggle, { desc = "Mouse Toggle" })
+map("", "<leader>mt", mouse_toggle, { desc = "Mouse Toggle" })
 
 
 -- line toggle
@@ -43,12 +43,12 @@ map("n", "<leader><F4>", ":e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>",
 --flush with coc
 --map("n", "<F5>", ":Gitsigns toggle_current_line_blame<CR>:set nu!<CR>:set rnu!<CR>:call CocAction('diagnosticToggle')<CR>:CocCommand document.toggleInlayHint<CR>:Gitsigns toggle_signs<CR>:set signcolumn=auto<CR>", opt)
 --flush with build-in lsp
-map("n", "<F5>",
-  ":Gitsigns toggle_current_line_blame<CR>:set nu!<CR>:set rnu!<CR>:set signcolumn=auto<CR><leader>dt<F10><leader>L",
+map("n", "<Leader>fl",
+  ":Gitsigns toggle_current_line_blame<CR>:Gitsigns toggle_signs<CR>::set nu!<CR>:set rnu!<CR><leader>dt,mt<leader>L:set signcolumn=auto<CR>",
   { remap = true, desc = "Flush" })
 -- Normal, Visual, Select, Operator-pending
 map("", "<F6>", ":tnext<CR>", { desc = "Tnext" })
-map("n", "<F12>", ":qa<CR>", { desc = "Save And Quit" })
+-- map("n", "<F12>", ":qa<CR>", { desc = "Save And Quit" })
 map("n", "H", "0", { desc = "Head" })
 map("n", "L", "$", { desc = "Tail" })
 
