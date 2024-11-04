@@ -81,7 +81,7 @@ return {
         -- Configure the icons on the bufferline when modified or pinned.
         -- Supports all the base icon options.
         modified = { button = '●' },
-        pinned = { button = ' ', filename = true },
+        pinned = { button = '', filename = true },
 
         -- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
         preset = 'default',
@@ -140,21 +140,22 @@ return {
     },
 
     keys = {
-      { "<leader>be", "<cmd>lua require('telescope.builtin').find_files()<CR>", mode = "n", desc = "Telescope Find Files" },
-      { "<leader>be", ":e <C-R>=expand('%:p:h')<CR>/",                          mode = "n", silent = false,               desc = "Buffer Edit" },
-      { "<leader>bp", "<Cmd>BufferPrevious<CR>",                                mode = "n", desc = "Buffer Previous" },
-      { "<leader>bn", "<Cmd>BufferNext<CR>",                                    mode = "n", desc = "Buffer Next" },
-      { "<leader>bc", "<Cmd>BufferClose<CR>",                                   mode = "n", desc = "Buffer Close" },
-      { "<leader>1",  "<Cmd>BufferGoto 1<CR>",                                  mode = "n", desc = "BufferGoto 1" },
-      { "<leader>2",  "<Cmd>BufferGoto 2<CR>",                                  mode = "n", desc = "BufferGoto 2" },
-      { "<leader>3",  "<Cmd>BufferGoto 3<CR>",                                  mode = "n", desc = "BufferGoto 3" },
-      { "<leader>4",  "<Cmd>BufferGoto 4<CR>",                                  mode = "n", desc = "BufferGoto 4" },
-      { "<leader>5",  "<Cmd>BufferGoto 5<CR>",                                  mode = "n", desc = "BufferGoto 5" },
-      { "<leader>6",  "<Cmd>BufferGoto 6<CR>",                                  mode = "n", desc = "BufferGoto 6" },
-      { "<leader>7",  "<Cmd>BufferGoto 7<CR>",                                  mode = "n", desc = "BufferGoto 7" },
-      { "<leader>8",  "<Cmd>BufferGoto 8<CR>",                                  mode = "n", desc = "BufferGoto 8" },
-      { "<leader>9",  "<Cmd>BufferGoto 9<CR>",                                  mode = "n", desc = "BufferGoto 9" },
-      { "<leader>0",  "<Cmd>BufferLast<CR>",                                    mode = "n", desc = "BufferGoto Last" },
+      { "<leader>be",  "<cmd>lua require('telescope.builtin').find_files()<CR>", mode = "n", desc = "Telescope Find Files" },
+      { "<leader>be",  ":e <C-R>=expand('%:p:h')<CR>/",                          mode = "n", silent = false,               desc = "Buffer Edit" },
+      { "<leader>pin", "<Cmd>BufferPin<CR>",                                     mode = "n", desc = "BufferPin" },
+      { "<leader>bp",  "<Cmd>BufferPrevious<CR>",                                mode = "n", desc = "Buffer Previous" },
+      { "<leader>bn",  "<Cmd>BufferNext<CR>",                                    mode = "n", desc = "Buffer Next" },
+      { "<leader>bc",  "<Cmd>BufferClose<CR>",                                   mode = "n", desc = "Buffer Close" },
+      { "<leader>1",   "<Cmd>BufferGoto 1<CR>",                                  mode = "n", desc = "BufferGoto 1" },
+      { "<leader>2",   "<Cmd>BufferGoto 2<CR>",                                  mode = "n", desc = "BufferGoto 2" },
+      { "<leader>3",   "<Cmd>BufferGoto 3<CR>",                                  mode = "n", desc = "BufferGoto 3" },
+      { "<leader>4",   "<Cmd>BufferGoto 4<CR>",                                  mode = "n", desc = "BufferGoto 4" },
+      { "<leader>5",   "<Cmd>BufferGoto 5<CR>",                                  mode = "n", desc = "BufferGoto 5" },
+      { "<leader>6",   "<Cmd>BufferGoto 6<CR>",                                  mode = "n", desc = "BufferGoto 6" },
+      { "<leader>7",   "<Cmd>BufferGoto 7<CR>",                                  mode = "n", desc = "BufferGoto 7" },
+      { "<leader>8",   "<Cmd>BufferGoto 8<CR>",                                  mode = "n", desc = "BufferGoto 8" },
+      { "<leader>9",   "<Cmd>BufferGoto 9<CR>",                                  mode = "n", desc = "BufferGoto 9" },
+      { "<leader>0",   "<Cmd>BufferLast<CR>",                                    mode = "n", desc = "BufferGoto Last" },
     }
   },
 }

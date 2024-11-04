@@ -257,8 +257,8 @@ return {
         icons = {
           File = { icon = '󰈔', hl = 'Identifier' },
           Module = { icon = '󰆧', hl = 'Include' },
-          Namespace = { icon = '💬', hl = 'Include' },
-          --Namespace = { icon = '󰅪', hl = 'Include' },
+          -- Namespace = { icon = '💬', hl = 'Include' },
+          Namespace = { icon = '󰅪', hl = 'Include' },
           Package = { icon = '󰏗', hl = 'Include' },
           Class = { icon = '𝓒', hl = 'Type' },
           Method = { icon = 'ƒ', hl = 'Function' },

@@ -33,10 +33,10 @@ return {
       dashboard.section.buttons.val = {
         dashboard.button("fo", "  Recently opened files", ",fo"),
         dashboard.button("e", "  New file", ":ene <BAR> startinsert <CR>"),
-        dashboard.button("ff", "➹  Find file", ",ff"),
+        dashboard.button("ff", "  Find file", ",ff"),
         dashboard.button("fg", "  Find word", ",fg"),
-        dashboard.button("fh", "✿  Help tags", ",fh"),
-        dashboard.button("Ce", "  Jump to bookmarks", ",<C-e>"),
+        dashboard.button("fh", "󰛵  Help tags", ",fh"),
+        dashboard.button("Ce", "  Jump to bookmarks", ",<C-e>"),
         dashboard.button("qa", "✖  Quit NVIM", ":qa<CR>"),
       }
       alpha.setup(dashboard.config)
