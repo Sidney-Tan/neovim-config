@@ -14,7 +14,7 @@ return {
       -- Toggle previous & next buffers stored within Harpoon list
       { "<leader>mp", "<cmd>lua require('harpoon'):list():prev()<CR>",                                   desc = "Mark Previous" },
       { "<leader>mn", "<cmd>lua require('harpoon'):list():next()<CR>",                                   desc = "Mark Next" },
-      { "<leader>th", "<leader>tth",                                                                     remap = true,                   desc = "Open harpoon window" },
+      { "<leader>th", "<plug>harpoon-telescope",                                                         remap = true,                   desc = "Open harpoon window" },
     },
     config = function()
       local harpoon = require("harpoon")
@@ -34,7 +34,7 @@ return {
           sorter = conf.generic_sorter({}),
         }):find()
       end
-      vim.keymap.set("n", "<leader>tth", function() toggle_telescope(harpoon:list()) end,
+      vim.keymap.set("n", "<plug>harpoon-telescope", function() toggle_telescope(harpoon:list()) end,
         { desc = "Open harpoon window" })
     end,
   },

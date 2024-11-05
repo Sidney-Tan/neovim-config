@@ -36,7 +36,7 @@ return {
         dashboard.button("ff", "  Find file", ",ff"),
         dashboard.button("fg", "  Find word", ",fg"),
         dashboard.button("fh", "󰛵  Help tags", ",fh"),
-        dashboard.button("Ce", "  Jump to bookmarks", ",<C-e>"),
+        dashboard.button("th", "  Jump to bookmarks", ",th"),
         dashboard.button("qa", "✖  Quit NVIM", ":qa<CR>"),
       }
       alpha.setup(dashboard.config)
