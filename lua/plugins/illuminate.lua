@@ -3,7 +3,7 @@ return {
     "RRethy/vim-illuminate",
     event = "CursorHold",
     -- You'll also get <a-n> and <a-p> as keymaps to move between references.
-    enabled = false,
+    enabled = true,
     config = function()
       require('illuminate').configure({
         -- providers: provider used to get references in the buffer, ordered by priority
@@ -59,6 +59,10 @@ return {
         -- case_insensitive_regex: sets regex case sensitivity
         case_insensitive_regex = false,
       })
+      -- set highlight for the cursor word
+      vim.api.nvim_command("hi! link IlluminatedWordText CursorLine")
+      vim.api.nvim_command("hi! link IlluminatedWordRead CursorLine")
+      vim.api.nvim_command("hi! link IlluminatedWordWrite CursorLine")
     end,
   },
 }
