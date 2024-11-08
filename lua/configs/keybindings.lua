@@ -105,18 +105,6 @@ map("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 --]=]
 
 
--- nvim-surround
---[[
-    Old text                    Command         New text
---------------------------------------------------------------------------------
-    hel*lo world                yss"            "hello world"
-    surround w*ords             ysiw)           surround (words)
-    ma*ke strings               ys$"            ma"ke strings"
-    [delete ar*ound me!]        ds]             delete around me!
-    'change qu*otes'            cs'"            "change quotes"
---]]
-
-
 -- commenting default support by neovim 0.10
 --[[
 							*gc* *gc-default*
