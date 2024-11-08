@@ -29,7 +29,7 @@ My favorite colorscheme is **[gruvbox](https://github.com/ellisonleao/gruvbox.nv
 
 ![](https://camo.githubusercontent.com/668e11d96516adbe306407d3b58a0fb22aaffbf98bc1d7edfa086ad17cd2feef/68747470733a2f2f692e706f7374696d672e63632f667933746e4746742f67727576626f782d7468656d65732e706e67)
 
-# Lsp
+# Lsp Related
 
 I have switched the lsp support from **[coc](https://github.com/neoclide/coc.nvim)** to **[neovim built-in lsp](https://neovim.io/doc/user/lsp.html)**, with the plugins like as follows: 
 
