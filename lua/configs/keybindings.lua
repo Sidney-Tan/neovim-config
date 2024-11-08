@@ -48,7 +48,7 @@ map("n", "<Leader>fl",
   { remap = true, desc = "Flush" })
 -- Normal, Visual, Select, Operator-pending
 map("", "<F6>", ":tnext<CR>", { desc = "Tnext" })
--- map("n", "<F12>", ":qa<CR>", { desc = "Save And Quit" })
+map("n", "qa", ":qa!<CR>", { desc = "Force Quit" })
 map("n", "H", "0", { desc = "Head" })
 map("n", "L", "$", { desc = "Tail" })
 
