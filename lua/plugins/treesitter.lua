@@ -30,7 +30,8 @@ return {
           "query",
           "markdown",
           "markdown_inline",
-          "go"
+          "go",
+          "html",
         },
         sync_install = false,
         highlight = { enable = true },
