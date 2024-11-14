@@ -10,5 +10,8 @@ return {
     -- Manually trigger suggestion,	codeium#Complete(),	<M-Bslash>
     -- Accept word from suggestion,	codeium#AcceptNextWord(),	<C-k>
     -- Accept line from suggestion,	codeium#AcceptNextLine(),	<C-l>
+    keys = {
+      { "<leader>cc", "<cmd>CodeiumToggle<CR>", mode = { "n", "i" }, desc = "Codeium Toggle" },
+    },
   }
 }
