@@ -49,7 +49,7 @@ map("n", "<Leader>fl",
 -- Normal, Visual, Select, Operator-pending
 map("", "<F6>", ":tnext<CR>", { desc = "Tnext" })
 map("n", "qa", ":qa!<CR>", { desc = "Force Quit" })
-map("n", "H", "0", { desc = "Head" })
+map("n", "H", "^", { desc = "Head" })
 map("n", "L", "$", { desc = "Tail" })
 
 
