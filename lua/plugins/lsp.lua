@@ -11,8 +11,8 @@ return {
       { "gt",         function() vim.lsp.buf.type_definition() end,                                  desc = "Lsp Type Definition" },
       { "gi",         function() vim.lsp.buf.implementation() end,                                   desc = "Lsp Implementation" },
       { "gr",         function() vim.lsp.buf.references() end,                                       desc = "Lsp references" },
-      { "<leader>dt", function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end,         desc = "Diagnostic Toggle" },
-      { "<leader>L",  function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, desc = "Inlay Hint Toggle" },
+      { "<leader>dt", function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end,         mode = { "n", "i" },              desc = "Diagnostic Toggle" },
+      { "<leader>L",  function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, mode = { "n", "i" },              desc = "Inlay Hint Toggle" },
       --{ "<F7>",       function() vim.lsp.buf.format() end,                                           desc = "Format" },
     },
   },
@@ -102,8 +102,10 @@ return {
           }
         end,
       }
-      vim.diagnostic.config({ virtual_text = false })
-      vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+      -- Diagnostic from virtual text to float
+      -- vim.diagnostic.config({ virtual_text = false })
+      -- vim.cmd [[autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})]]
+
       -- Inlay-hints
       vim.lsp.inlay_hint.enable(true, { 0 })
     end,
