@@ -1,23 +1,23 @@
 return {
   {
     "hrsh7th/cmp-nvim-lsp",
-    event = { "InsertEnter", "CmdlineChanged" },
+    event = { "InsertEnter", "CmdlineEnter" },
   },
   {
     "hrsh7th/cmp-buffer",
-    event = { "InsertEnter", "CmdlineChanged" },
+    event = { "InsertEnter", "CmdlineEnter" },
   },
   {
     "hrsh7th/cmp-path",
-    event = { "InsertEnter", "CmdlineChanged" },
+    event = { "InsertEnter", "CmdlineEnter" },
   },
   {
     "hrsh7th/cmp-cmdline",
-    event = { "CmdlineChanged" },
+    event = { "CmdlineEnter" },
   },
   {
     "hrsh7th/nvim-cmp",
-    event = { "InsertEnter", "CmdlineChanged" },
+    event = { "InsertEnter", "CmdlineEnter" },
     config = function()
       local cmp = require("cmp")
       cmp.setup({
