@@ -44,7 +44,7 @@ map("n", "<leader><F4>", ":e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>",
 --map("n", "<F5>", ":Gitsigns toggle_current_line_blame<CR>:set nu!<CR>:set rnu!<CR>:call CocAction('diagnosticToggle')<CR>:CocCommand document.toggleInlayHint<CR>:Gitsigns toggle_signs<CR>:set signcolumn=auto<CR>", opt)
 --flush with build-in lsp
 map("n", "<Leader>fl",
-  ":Gitsigns toggle_current_line_blame<CR>:Gitsigns toggle_signs<CR>::set nu!<CR>:set rnu!<CR><leader>dt,mt<leader>L:set signcolumn=auto<CR>",
+  ":Gitsigns toggle_current_line_blame<CR>:Gitsigns toggle_signs<CR>:set nu!<CR>:set rnu!<CR><leader>dt<leader>mt<leader>L:set signcolumn=auto<CR>",
   { remap = true, desc = "Flush" })
 -- Normal, Visual, Select, Operator-pending
 map("", "<F6>", ":tnext<CR>", { desc = "Tnext" })
