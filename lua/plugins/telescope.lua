@@ -11,6 +11,7 @@ return {
       { "<leader>fh", "<cmd>lua require('telescope.builtin').help_tags()<CR>",  mode = "n", desc = "Telescope Help Tags" },
       { "<leader>ff", "<cmd>lua require('telescope.builtin').marks()<CR>",      mode = "n", desc = "Telescope Marks" },
       { "<leader>fs", "<cmd>lua require('telescope.builtin').git_status()<CR>", mode = "n", desc = "Telescope Git Status" },
+      { "<leader>fk", "<cmd>lua require('telescope.builtin').keymaps()<CR>",    mode = "n", desc = "Telescope Keymaps" },
       { "<leader>tl", "<cmd>Telescope<CR>",                                     mode = "n", desc = "Telescope" },
     },
   },
