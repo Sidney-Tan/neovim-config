@@ -66,5 +66,7 @@ I have switched the lsp support from **[coc](https://github.com/neoclide/coc.nvi
 
 ---
 
+# License
+
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/Sidney-Tan/neovim-config/LICENSE) file for details.
 
