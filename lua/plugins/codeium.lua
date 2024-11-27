@@ -63,13 +63,13 @@ return {
       root_dir = { ".bzr", ".git", ".hg", ".svn", "_FOSSIL_", "package.json" }
     },
     keys = {
-      { "<Tab>",      "<cmd>lua require('neocodeium').accept()<CR>",              mode = { "i" },      desc = "Codeium Accept" },
-      { "<C-]>",      "<cmd>lua require('neocodeium').clear()<CR>",               mode = { "i" },      desc = "Codeium Clear" },
-      { "<M-]>",      "<cmd>lua require('neocodeium').cycle_or_complete(1)<CR>",  mode = { "i" },      desc = "Codeium Next" },
-      { "<M-[>",      "<cmd>lua require('neocodeium').cycle_or_complete(-1)<CR>", mode = { "i" },      desc = "Codeium Previous" },
-      { "<C-k>",      "<cmd>lua require('neocodeium').accept_word()<CR>",         mode = { "i" },      desc = "Codeium Accept Word" },
-      { "<C-l>",      "<cmd>lua require('neocodeium').accept_line()<CR>",         mode = { "i" },      desc = "Codeium Accept Line" },
-      { "<leader>cc", "<cmd>NeoCodeium toggle<CR>",                               mode = { "n", "i" }, desc = "Codeium Toggle" },
+      { "<leader><Tab>", "<cmd>lua require('neocodeium').accept()<CR>",              mode = { "i" },      desc = "Codeium Accept" },
+      { "<C-]>",         "<cmd>lua require('neocodeium').clear()<CR>",               mode = { "i" },      desc = "Codeium Clear" },
+      { "<M-]>",         "<cmd>lua require('neocodeium').cycle_or_complete(1)<CR>",  mode = { "i" },      desc = "Codeium Next" },
+      { "<M-[>",         "<cmd>lua require('neocodeium').cycle_or_complete(-1)<CR>", mode = { "i" },      desc = "Codeium Previous" },
+      { "<C-k>",         "<cmd>lua require('neocodeium').accept_word()<CR>",         mode = { "i" },      desc = "Codeium Accept Word" },
+      { "<C-l>",         "<cmd>lua require('neocodeium').accept_line()<CR>",         mode = { "i" },      desc = "Codeium Accept Line" },
+      { "<leader>cc",    "<cmd>NeoCodeium toggle<CR>",                               mode = { "n", "i" }, desc = "Codeium Toggle" },
     },
   },
 }
