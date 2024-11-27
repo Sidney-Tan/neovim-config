@@ -11,7 +11,7 @@ local opt = { remap = false, silent = true }
 local view_opt = { remap = false, silent = false }
 
 -- functions
--- mouse toggle
+-- Mouse toggle
 local mouse_toggle = function()
   if vim.o.mouse == "" then
     vim.o.mouse = "a"
@@ -22,7 +22,7 @@ end
 map("", "<leader>mt", mouse_toggle, { desc = "Mouse Toggle" })
 
 
--- line toggle
+-- Line toggle
 local line_toggle = function()
   if vim.o.showtabline == 0 and vim.o.laststatus == 0 then
     vim.o.showtabline = 2
@@ -33,6 +33,24 @@ local line_toggle = function()
   end
 end
 map("", "<leader>lt", line_toggle, { desc = "Line Toggle" })
+
+
+-- Interview mode, close codeium and use float diagnostic.
+local interview_mode = function()
+  if require("neocodeium").get_status() ~= 0 then
+    vim.diagnostic.config({ virtual_text = true })
+    vim.cmd [[autocmd! DiagnosticFloat]]
+    require("neocodeium.commands").enable()
+  else
+    vim.diagnostic.config({ virtual_text = false })
+    vim.cmd [[
+      augroup DiagnosticFloat
+        autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
+      augroup END]]
+    require("neocodeium.commands").disable()
+  end
+end
+map("", "<leader>im", interview_mode, { desc = "Interview Mode" })
 
 
 -- Normal
