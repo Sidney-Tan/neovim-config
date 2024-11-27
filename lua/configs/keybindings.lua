@@ -45,7 +45,7 @@ local interview_mode = function()
     vim.diagnostic.config({ virtual_text = false })
     vim.cmd [[
       augroup DiagnosticFloat
-        autocmd CursorHold,CursorHoldI * lua vim.diagnostic.open_float(nil, {focus=false})
+        autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})
       augroup END]]
     require("neocodeium.commands").disable()
   end
