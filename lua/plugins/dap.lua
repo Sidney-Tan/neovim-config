@@ -57,6 +57,7 @@ return {
       { "<leader>do", "<cmd>lua require('dap').step_out()<CR>",          desc = "Dap Step Out" },
       { "<leader>dg", "<cmd>lua require('dap').repl.toggle()<CR>",       desc = "Dap Repl Toggle" },
       { "<leader>dl", "<cmd>lua require('dap').run_last()<CR>",          desc = "Dap Run Last" },
+      { "<leader>dc", "<cmd>lua require('dap').terminate()<CR>",         desc = "Dap Terminate" },
     },
   },
 
@@ -69,15 +70,13 @@ return {
     "rcarriga/nvim-dap-ui",
     lazy = true,
     opts = {
-      icons = {
-        expanded = "-",
-        collapsed = "+",
-        circular = "↺"
-      },
       mappings = {
-        expand = "<CR>",
+        edit = "e",
+        expand = { "<CR>", "<2-LeftMouse>" },
         open = "o",
-        remove = "d"
+        remove = "d",
+        repl = "r",
+        toggle = "t"
       },
       layouts = {
         {
@@ -105,8 +104,20 @@ return {
         },
       },
       controls = {
-        enabled = false,
-      }
+        element = "repl",
+        enabled = true,
+        icons = {
+          disconnect = "",
+          pause = "",
+          play = "",
+          run_last = "",
+          step_back = "",
+          step_into = "",
+          step_out = "",
+          step_over = "",
+          terminate = ""
+        },
+      },
     },
     keys = {
       { "<leader>du", "<cmd>lua require('dapui').toggle()<CR>", desc = "Dapui Toggle" },
