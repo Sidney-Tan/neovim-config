@@ -56,6 +56,7 @@ return {
       { "<F12>",      "<cmd>lua require('dap').step_into()<CR>",         desc = "Dap Step Into" },
       { "<leader>do", "<cmd>lua require('dap').step_out()<CR>",          desc = "Dap Step Out" },
       { "<leader>dg", "<cmd>lua require('dap').repl.toggle()<CR>",       desc = "Dap Repl Toggle" },
+      { "<leader>dl", "<cmd>lua require('dap').run_last()<CR>",          desc = "Dap Run Last" },
     },
   },
 
@@ -85,10 +86,10 @@ return {
             -- Provide IDs as strings or tables with "id" and "size" keys
             {
               id = "scopes",
-              size = 0.25, -- Can be float or integer > 1
+              size = 0.5, -- Can be float or integer > 1
             },
             { id = "breakpoints", size = 0.25 },
-            { id = "stacks",      size = 0.25 },
+            --{ id = "stacks",      size = 0.25 },
             { id = "watches",     size = 0.25 },
           },
           size = 40,
