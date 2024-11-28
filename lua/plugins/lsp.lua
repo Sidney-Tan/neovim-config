@@ -25,7 +25,7 @@ return {
         ensure_installed = {
           "clangd",
           "lua_ls",
-          "jedi_language_server",
+          "basedpyright",
           "cmake",
           "bashls",
           "jsonls",
@@ -76,8 +76,8 @@ return {
             capabilities = capabilities,
           }
         end,
-        ["jedi_language_server"] = function()
-          lspconfig.jedi_language_server.setup {
+        ["basedpyright"] = function()
+          lspconfig.basedpyright.setup {
             capabilities = capabilities,
           }
         end,

@@ -95,7 +95,7 @@ return {
       require('lspconfig')['lua_ls'].setup {
         capabilities = capabilities
       }
-      require('lspconfig')['jedi_language_server'].setup {
+      require('lspconfig')['basedpyright'].setup {
         capabilities = capabilities
       }
       require('lspconfig')['bashls'].setup {
