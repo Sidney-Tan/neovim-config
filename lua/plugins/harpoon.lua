@@ -5,9 +5,9 @@ return {
     branch = "harpoon2",
     -- dependencies =  { "nvim-lua/plenary.nvim" },
     keys = {
-      { "<leader>a",  "<cmd>lua require('harpoon'):list():append()<CR>",                                 desc = "Mark Append" },
+      { "<leader>a",  "<cmd>lua require('harpoon'):list():add()<CR>",                                    desc = "Mark Add" },
       { "<leader>e",  "<cmd>lua require('harpoon').ui:toggle_quick_menu(require('harpoon'):list())<CR>", desc = "Mark Toggle quick menu" },
-      { "<leader>m1", "<cmd>lua require(harpoon'):list():select(1)<CR>",                                 desc = "Mark Select 1" },
+      { "<leader>m1", "<cmd>lua require('harpoon'):list():select(1)<CR>",                                desc = "Mark Select 1" },
       { "<leader>m2", "<cmd>lua require('harpoon'):list():select(2)<CR>",                                desc = "Mark Select 2" },
       { "<leader>m3", "<cmd>lua require('harpoon'):list():select(3)<CR>",                                desc = "Mark Select 3" },
       { "<leader>m4", "<cmd>lua require('harpoon'):list():select(4)<CR>",                                desc = "Mark Select 4" },
@@ -38,4 +38,14 @@ return {
         { desc = "Open harpoon window" })
     end,
   },
+  -- build-in marks
+  -- `m + lowercase letter, add mark in the buffer
+  -- `m + uppercase letter, add mark outside the buffer
+  -- g` + letter, jump to mark
+  -- `] , jump to last change letter
+  -- `} , jump to the end of paragraph
+  -- `{ , jump to the start of paragraph
+  -- other jump commands
+  -- g; jump to the older position in change list.
+  -- g, jump to the newer position in change list.
 }
