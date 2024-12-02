@@ -38,15 +38,15 @@ map("", "<leader>lt", line_toggle, { desc = "Line Toggle" })
 -- Interview mode, close codeium and use float diagnostic.
 local interview_mode = function()
   if require("neocodeium").get_status() ~= 0 then
-    vim.diagnostic.config({ virtual_text = true })
-    vim.cmd [[autocmd! DiagnosticFloat]]
+    --vim.diagnostic.config({ virtual_text = true })
+    --vim.cmd [[autocmd! DiagnosticFloat]]
     require("neocodeium.commands").enable()
   else
-    vim.diagnostic.config({ virtual_text = false })
-    vim.cmd [[
-      augroup DiagnosticFloat
-        autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})
-      augroup END]]
+    --vim.diagnostic.config({ virtual_text = false })
+    --vim.cmd [[
+    --  augroup DiagnosticFloat
+    --    autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})
+    --  augroup END]]
     require("neocodeium.commands").disable()
   end
 end

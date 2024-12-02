@@ -104,10 +104,11 @@ return {
       }
       -- Diagnostic from virtual text to float
       vim.diagnostic.config({ virtual_text = false })
-      vim.cmd [[
-      augroup DiagnosticFloat
-        autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})
-      augroup END]]
+      -- Use tiny-inline-diagnostic alternative.
+      -- vim.cmd [[
+      -- augroup DiagnosticFloat
+      --   autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})
+      -- augroup END]]
 
       -- Inlay-hints
       vim.lsp.inlay_hint.enable(true, { 0 })

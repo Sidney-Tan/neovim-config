@@ -45,7 +45,12 @@ return {
   -- `] , jump to last change letter
   -- `} , jump to the end of paragraph
   -- `{ , jump to the start of paragraph
-  -- other jump commands
+  
+  -- PS: other jump commands
   -- g; jump to the older position in change list.
   -- g, jump to the newer position in change list.
+  -- ]d, jump to the next diagnostic
+  -- [d, jump to the previous diagnostic
+  -- ]c, jump to the next gitsign hunk
+  -- [c, jump to the previous gitsign hunk
 }
