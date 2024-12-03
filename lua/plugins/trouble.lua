@@ -38,6 +38,7 @@ return {
   },
   {
     "rachartier/tiny-inline-diagnostic.nvim",
+    --event = "VeryLazy", -- or LspAttach
     lazy = false,
     priority = 996, -- needs to be loaded before lsp
     opts = {},
