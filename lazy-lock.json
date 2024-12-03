@@ -44,7 +44,7 @@
   "sniprun": { "branch": "master", "commit": "67ac2d84d03f3b857d59571ff5fefb6080dffa2d" },
   "taglist": { "branch": "master", "commit": "d4581616055d7f8095b4251a023be8f57c8fb24c" },
   "telescope.nvim": { "branch": "master", "commit": "2eca9ba22002184ac05eddbe47a7fe2d5a384dfc" },
-  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "f8b6d0bc4bc0ab7e7df30899ff062ab4b76dc055" },
+  "tiny-inline-diagnostic.nvim": { "branch": "main", "commit": "cec1cee1e25bbb2cbc588d40a460953012595479" },
   "toggleterm.nvim": { "branch": "main", "commit": "87b2d6a3cab8e2bd9a0255427074285f0365398d" },
   "trouble.nvim": { "branch": "main", "commit": "46cf952fc115f4c2b98d4e208ed1e2dce08c9bf6" },
   "vim-illuminate": { "branch": "master", "commit": "5eeb7951fc630682c322e88a9bbdae5c224ff0aa" },
