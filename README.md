@@ -1,4 +1,4 @@
-# neovim-config/
+# neovim-config
 
 <a href="https://dotfyle.com/Sidney-Tan/neovim-config"><img src="https://dotfyle.com/Sidney-Tan/neovim-config/badges/plugins?style=flat" /></a>
 <a href="https://dotfyle.com/Sidney-Tan/neovim-config"><img src="https://dotfyle.com/Sidney-Tan/neovim-config/badges/leaderkey?style=flat" /></a>
@@ -20,9 +20,7 @@ Open Neovim with this config:
 NVIM_APPNAME=Sidney-Tan/neovim-config/ nvim
 ```
 
----
-
-# Plugin Manager
+## Plugin Manager
 
 I have switched the plugin manager from **[packer.nvim](https://github.com/wbthomason/packer.nvim)** to **[lazy.nvim](https://github.com/folke/lazy.nvim)**.
 
@@ -32,16 +30,12 @@ One of the features that has made the most impact on me:
 
 + 🔌 Automatic lazy-loading of Lua modules and **lazy-loading** on events, commands, filetypes, and key mappings.
 
----
-
-# Colorscheme
+## Colorscheme
 
 My favorite colorscheme is **[gruvbox](https://github.com/ellisonleao/gruvbox.nvim)**:
 
 ![](https://camo.githubusercontent.com/668e11d96516adbe306407d3b58a0fb22aaffbf98bc1d7edfa086ad17cd2feef/68747470733a2f2f692e706f7374696d672e63632f667933746e4746742f67727576626f782d7468656d65732e706e67)
----
-
-# Lsp Related
+## Lsp Related
 
 I have switched the lsp support from **[coc](https://github.com/neoclide/coc.nvim)** to **[neovim built-in lsp](https://neovim.io/doc/user/lsp.html)**, with the plugins like as follows: 
 
@@ -66,8 +60,6 @@ I have also installed the language servers like as follows:
 + html
 + jsonls
 + lua_ls
-
----
 
 ## Plugin List
 
@@ -190,17 +182,13 @@ I have also installed the language servers like as follows:
 + [sitiom/nvim-numbertoggle](https://dotfyle.com/plugins/sitiom/nvim-numbertoggle)
 + [rcarriga/nvim-notify](https://dotfyle.com/plugins/rcarriga/nvim-notify)
 
----
-
-# Plugin Configs
+## Plugin Configs
 
 My [plugin configs](https://github.com/Sidney-Tan/neovim-config/tree/master/lua/plugins):
 
 + 📁 Configurable in multiple files.
 
----
-
-# Other configs
+## Other configs
 
 [Other configs](https://github.com/Sidney-Tan/neovim-config/tree/master/lua/configs), as follows:
 
@@ -209,9 +197,7 @@ My [plugin configs](https://github.com/Sidney-Tan/neovim-config/tree/master/lua/
 + [Keymaps in addiction to my plugin configs](https://github.com/Sidney-Tan/neovim-config/blob/master/lua/configs/keybindings.lua)
 + [Vimscript form configs](https://github.com/Sidney-Tan/neovim-config/blob/master/lua/configs/vim-config.lua) 
 
----
-
-# License
+## License
 
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/Sidney-Tan/neovim-config/LICENSE) file for details.
 
