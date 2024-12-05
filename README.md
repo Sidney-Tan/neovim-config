@@ -78,6 +78,9 @@ I have also installed the language servers as follows:
 ### colorscheme-creation
 
 + [rktjmp/lush.nvim](https://dotfyle.com/plugins/rktjmp/lush.nvim)
+### comment
+
++ [folke/todo-comments.nvim](https://dotfyle.com/plugins/folke/todo-comments.nvim)
 ### competitive-programming
 
 + [kawre/leetcode.nvim](https://dotfyle.com/plugins/kawre/leetcode.nvim)
