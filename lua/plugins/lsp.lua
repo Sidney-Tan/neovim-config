@@ -122,7 +122,7 @@ return {
         "shfmt",
         "black",
         "isort",
-        "sqlfmt",
+        "sql-formatter",
         "cmakelang",
         "clang-format",
       },

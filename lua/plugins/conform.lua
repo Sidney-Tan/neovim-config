@@ -10,8 +10,8 @@ return {
       go = { lsp_format = "fallback" },
       json = { lsp_format = "fallback" },
       bash = { "shfmt" },
-      sql = { "sqlfmt" },
-      cmake = { "cmake_format" },
+      sql = { "sql_formatter" },
+      cmake = { "cmakelang" },
       -- Conform will run multiple formatters sequentially
       python = { "isort", "black" },
       -- -- You can use a function here to determine the formatters dynamically
