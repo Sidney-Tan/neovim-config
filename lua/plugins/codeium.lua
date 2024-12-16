@@ -19,7 +19,8 @@ return {
   -- Replace codeium with neocodeium.
   {
     "monkoose/neocodeium",
-    event = "VeryLazy",
+    lazy = true,
+    --event = "VeryLazy",
     opts = {
       -- If `false`, then would not start codeium server (disabled state)
       -- You can manually enable it at runtime with `:NeoCodeium enable`
