@@ -1,0 +1,6 @@
+{
+  "language": "hive",
+  "tabWidth": 2,
+  "keywordCase": "upper",
+  "linesBetweenQueries": 2
+}

@@ -6,7 +6,7 @@ return {
     formatters_by_ft = {
       cpp = { "clang-format" },
       c = { "clang-format" },
-      lua = { lsp_format = "fallback" },
+      lua = { "stylua" },
       go = { lsp_format = "fallback" },
       json = { lsp_format = "fallback" },
       bash = { "shfmt" },

@@ -30,6 +30,7 @@ return {
           "bashls",
           "jsonls",
           "gopls",
+          "sqlls",
         },
       })
       local lspconfig = require("lspconfig")
@@ -108,6 +109,11 @@ return {
             capabilities = capabilities,
           }
         end,
+        ["sqlls"] = function()
+          lspconfig.sqlls.setup {
+            capabilities = capabilities,
+          }
+        end,
       }
       -- Diagnostic from virtual text to float
       vim.diagnostic.config({ virtual_text = false })
@@ -132,6 +138,8 @@ return {
         "sql-formatter",
         "cmakelang",
         "clang-format",
+        "stylua",
+        "codespell",
       },
     },
   },
