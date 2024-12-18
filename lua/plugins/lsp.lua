@@ -63,7 +63,15 @@ return {
         mode = { "n", "i" },
         desc = "Inlay Hint Toggle",
       },
-      --{ "<F7>",       function() vim.lsp.buf.format() end,                                           desc = "Format" },
+      --[[
+      {
+        "<F7>",
+        function()
+          vim.lsp.buf.format()
+        end,
+        desc = "Format",
+      },
+      --]]
     },
   },
   {
