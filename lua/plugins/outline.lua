@@ -20,7 +20,7 @@ return {
     opts = {
       outline_window = {
         -- Where to open the split window: right/left
-        position = 'right',
+        position = "right",
         -- The default split commands used are 'topleft vs' and 'botright vs'
         -- depending on `position`. You can change this by providing your own
         -- `split_command`.
@@ -79,7 +79,7 @@ return {
         -- Winhighlight option for outline window.
         -- See :help 'winhl'
         -- To change background color to "CustomHl" for example, use "Normal:CustomHl".
-        winhl = '',
+        winhl = "",
       },
 
       outline_items = {
@@ -103,11 +103,11 @@ return {
           -- The above two options are respected.
           -- This can be triggered manually through `follow_cursor` lua API,
           -- :OutlineFollow command, or <C-g>.
-          follow = { 'CursorMoved' },
+          follow = { "CursorMoved" },
           -- Re-request symbols from the provider.
           -- This can be triggered manually through `refresh_outline` lua API, or
           -- :OutlineRefresh command.
-          items = { 'InsertLeave', 'WinEnter', 'BufEnter', 'BufWinEnter', 'TabEnter', 'BufWritePost' },
+          items = { "InsertLeave", "WinEnter", "BufEnter", "BufWinEnter", "TabEnter", "BufWritePost" },
         },
       },
 
@@ -117,9 +117,9 @@ return {
         markers = {
           -- It is recommended for bottom and middle markers to use the same number
           -- of characters to align all child nodes vertically.
-          bottom = '└',
-          middle = '├',
-          vertical = '│',
+          bottom = "└",
+          middle = "├",
+          vertical = "│",
         },
       },
 
@@ -134,7 +134,7 @@ return {
           -- Set true for 1 node, false for 0.
           only = true,
         },
-        markers = { '', '' },
+        markers = { "", "" },
       },
 
       preview_window = {
@@ -145,14 +145,14 @@ return {
         -- If you disable this you can still open hover_symbol using your keymap
         -- below.
         open_hover_on_preview = false,
-        width = 50,     -- Percentage or integer of columns
+        width = 50, -- Percentage or integer of columns
         min_width = 50, -- Minimum number of columns
         -- Whether width is relative to the total width of nvim.
         -- When relative_width = true, this means take 50% of the total
         -- screen width for preview window, ensure the result width is at least 50
         -- characters wide.
         relative_width = true,
-        height = 50,     -- Percentage or integer of lines
+        height = 50, -- Percentage or integer of lines
         min_height = 10, -- Minimum number of lines
         -- Similar to relative_width, except the height is relative to the outline
         -- window's height.
@@ -161,58 +161,58 @@ return {
         -- Options include: single/double/rounded/solid/shadow or an array of border
         -- characters.
         -- See :help nvim_open_win() and search for "border" option.
-        border = 'single',
+        border = "single",
         -- winhl options for the preview window, see ':h winhl'
-        winhl = 'NormalFloat:',
+        winhl = "NormalFloat:",
         -- Pseudo-transparency of the preview window, see ':h winblend'
         winblend = 0,
         -- Experimental feature that let's you edit the source content live
         -- in the preview window. Like VS Code's "peek editor".
-        live = false
+        live = false,
       },
 
       -- These keymaps can be a string or a table for multiple keys.
       -- Set to `{}` to disable. (Using 'nil' will fallback to default keys)
       keymaps = {
-        show_help = '?',
-        close = { '<Esc>', 'q' },
+        show_help = "?",
+        close = { "<Esc>", "q" },
         -- Jump to symbol under cursor.
         -- It can auto close the outline window when triggered, see
         -- 'auto_close' option above.
-        goto_location = '<Cr>',
+        goto_location = "<Cr>",
         -- Jump to symbol under cursor but keep focus on outline window.
-        peek_location = 'o',
+        peek_location = "o",
         -- Visit location in code and close outline immediately
-        goto_and_close = '<S-Cr>',
+        goto_and_close = "<S-Cr>",
         -- Change cursor position of outline window to match current location in code.
         -- 'Opposite' of goto/peek_location.
-        restore_location = '<C-g>',
+        restore_location = "<C-g>",
         -- Open LSP/provider-dependent symbol hover information
-        hover_symbol = '<C-space>',
+        hover_symbol = "<C-space>",
         -- Preview location code of the symbol under cursor
-        toggle_preview = 'K',
-        rename_symbol = 'r',
-        code_actions = 'a',
+        toggle_preview = "K",
+        rename_symbol = "r",
+        code_actions = "a",
         -- These fold actions are collapsing tree nodes, not code folding
-        fold = 'h',
-        unfold = 'l',
-        fold_toggle = '<Tab>',
+        fold = "h",
+        unfold = "l",
+        fold_toggle = "<Tab>",
         -- Toggle folds for all nodes.
         -- If at least one node is folded, this action will fold all nodes.
         -- If all nodes are folded, this action will unfold all nodes.
-        fold_toggle_all = '<S-Tab>',
-        fold_all = 'W',
-        unfold_all = 'E',
-        fold_reset = 'R',
+        fold_toggle_all = "<S-Tab>",
+        fold_all = "W",
+        unfold_all = "E",
+        fold_reset = "R",
         -- Move down/up by one line and peek_location immediately.
         -- You can also use outline_window.auto_jump=true to do this for any
         -- j/k/<down>/<up>.
-        down_and_jump = '<C-j>',
-        up_and_jump = '<C-k>',
+        down_and_jump = "<C-j>",
+        up_and_jump = "<C-k>",
       },
 
       providers = {
-        priority = { 'lsp', 'coc', 'markdown', 'norg' },
+        priority = { "lsp", "coc", "markdown", "norg" },
         -- Configuration for each provider (3rd party providers are supported)
         lsp = {
           -- Lsp client names to ignore
@@ -220,7 +220,7 @@ return {
         },
         markdown = {
           -- List of supported ft's to use the markdown provider
-          filetypes = { 'markdown' },
+          filetypes = { "markdown" },
         },
       },
 
@@ -255,39 +255,39 @@ return {
         -- the custom mapping of icons specified below. The icons table is also
         -- needed for specifying hl group.
         icons = {
-          File = { icon = '󰈔', hl = 'Identifier' },
-          Module = { icon = '󰆧', hl = 'Include' },
+          File = { icon = "󰈔", hl = "Identifier" },
+          Module = { icon = "󰆧", hl = "Include" },
           -- Namespace = { icon = '💬', hl = 'Include' },
-          Namespace = { icon = '󰅪', hl = 'Include' },
-          Package = { icon = '󰏗', hl = 'Include' },
-          Class = { icon = '𝓒', hl = 'Type' },
-          Method = { icon = 'ƒ', hl = 'Function' },
-          Property = { icon = '', hl = 'Identifier' },
-          Field = { icon = '󰆨', hl = 'Identifier' },
-          Constructor = { icon = '', hl = 'Special' },
-          Enum = { icon = 'ℰ', hl = 'Type' },
-          Interface = { icon = '󰜰', hl = 'Type' },
-          Function = { icon = '', hl = 'Function' },
-          Variable = { icon = '', hl = 'Constant' },
-          Constant = { icon = '', hl = 'Constant' },
-          String = { icon = '𝓐', hl = 'String' },
-          Number = { icon = '#', hl = 'Number' },
-          Boolean = { icon = '⊨', hl = 'Boolean' },
-          Array = { icon = '󰅪', hl = 'Constant' },
-          Object = { icon = '⦿', hl = 'Type' },
-          Key = { icon = '🔐', hl = 'Type' },
-          Null = { icon = 'NULL', hl = 'Type' },
-          EnumMember = { icon = '', hl = 'Identifier' },
-          Struct = { icon = '𝓢', hl = 'Structure' },
-          Event = { icon = '🗲', hl = 'Type' },
-          Operator = { icon = '+', hl = 'Identifier' },
-          TypeParameter = { icon = '𝙏', hl = 'Identifier' },
-          Component = { icon = '󰅴', hl = 'Function' },
-          Fragment = { icon = '󰅴', hl = 'Constant' },
-          TypeAlias = { icon = ' ', hl = 'Type' },
-          Parameter = { icon = ' ', hl = 'Identifier' },
-          StaticMethod = { icon = ' ', hl = 'Function' },
-          Macro = { icon = ' ', hl = 'Function' },
+          Namespace = { icon = "󰅪", hl = "Include" },
+          Package = { icon = "󰏗", hl = "Include" },
+          Class = { icon = "𝓒", hl = "Type" },
+          Method = { icon = "ƒ", hl = "Function" },
+          Property = { icon = "", hl = "Identifier" },
+          Field = { icon = "󰆨", hl = "Identifier" },
+          Constructor = { icon = "", hl = "Special" },
+          Enum = { icon = "ℰ", hl = "Type" },
+          Interface = { icon = "󰜰", hl = "Type" },
+          Function = { icon = "", hl = "Function" },
+          Variable = { icon = "", hl = "Constant" },
+          Constant = { icon = "", hl = "Constant" },
+          String = { icon = "𝓐", hl = "String" },
+          Number = { icon = "#", hl = "Number" },
+          Boolean = { icon = "⊨", hl = "Boolean" },
+          Array = { icon = "󰅪", hl = "Constant" },
+          Object = { icon = "⦿", hl = "Type" },
+          Key = { icon = "🔐", hl = "Type" },
+          Null = { icon = "NULL", hl = "Type" },
+          EnumMember = { icon = "", hl = "Identifier" },
+          Struct = { icon = "𝓢", hl = "Structure" },
+          Event = { icon = "🗲", hl = "Type" },
+          Operator = { icon = "+", hl = "Identifier" },
+          TypeParameter = { icon = "𝙏", hl = "Identifier" },
+          Component = { icon = "󰅴", hl = "Function" },
+          Fragment = { icon = "󰅴", hl = "Constant" },
+          TypeAlias = { icon = " ", hl = "Type" },
+          Parameter = { icon = " ", hl = "Identifier" },
+          StaticMethod = { icon = " ", hl = "Function" },
+          Macro = { icon = " ", hl = "Function" },
         },
       },
     },

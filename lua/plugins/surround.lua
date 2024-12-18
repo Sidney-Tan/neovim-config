@@ -3,7 +3,7 @@ return {
     "kylechui/nvim-surround",
     event = "VeryLazy",
     version = "*",
-    opts = {}
+    opts = {},
     -- nvim-surround
     --[[
         Old text                    Command         New text
@@ -16,4 +16,3 @@ return {
     --]]
   },
 }
-

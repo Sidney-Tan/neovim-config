@@ -4,7 +4,7 @@ local map = vim.keymap.set
 -- diff:
 -- vim.keymap.set can use lua functions, and use “remap” for remap
 -- vim.api.nvim_set_keymap can't use lua functions, and use “noremap” for remap
--- defalut opt: remap = false, silent = true
+-- default opt: remap = false, silent = true
 -- remap快捷键不递归传递, silent不回显
 local opt = { remap = false, silent = true }
 -- 快捷键不递归传递, 需要回显
@@ -21,7 +21,6 @@ local mouse_toggle = function()
 end
 map("", "<leader>mt", mouse_toggle, { desc = "Mouse Toggle" })
 
-
 -- Line toggle
 local line_toggle = function()
   if vim.o.showtabline == 0 and vim.o.laststatus == 0 then
@@ -33,7 +32,6 @@ local line_toggle = function()
   end
 end
 map("", "<leader>lt", line_toggle, { desc = "Line Toggle" })
-
 
 -- Interview mode, close codeium and use float diagnostic.
 local interview_mode = function()
@@ -52,27 +50,36 @@ local interview_mode = function()
 end
 map("", "<leader>im", interview_mode, { desc = "Interview Mode" })
 
-
 -- Normal
-map("n", "<F4>", ":e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>",
-  { desc = "Header/Implementation Cpp Conversion" })
-map("n", "<leader><F4>", ":e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>",
-  { desc = "Header/Implementation C Conversion" })
+map(
+  "n",
+  "<F4>",
+  ":e %:p:s,.h$,.X123X,:s,.cpp$,.h,:s,.X123X$,.cpp,<CR>",
+  { desc = "Header/Implementation Cpp Conversion" }
+)
+map(
+  "n",
+  "<leader><F4>",
+  ":e %:p:s,.h$,.X123X,:s,.c$,.h,:s,.X123X$,.c,<CR>",
+  { desc = "Header/Implementation C Conversion" }
+)
 --flush with coc
 --map("n", "<F5>", ":Gitsigns toggle_current_line_blame<CR>:set nu!<CR>:set rnu!<CR>:call CocAction('diagnosticToggle')<CR>:CocCommand document.toggleInlayHint<CR>:Gitsigns toggle_signs<CR>:set signcolumn=auto<CR>", opt)
---flush with build-in lsp
-map("n", "<Leader>fl",
+--flush with built-in lsp
+map(
+  "n",
+  "<Leader>fl",
   ":Gitsigns toggle_current_line_blame<CR>:Gitsigns toggle_signs<CR>:set nu!<CR>:set rnu!<CR><leader>dt<leader>mt<leader>L:set signcolumn=auto<CR>",
-  { remap = true, desc = "Flush" })
+  { remap = true, desc = "Flush" }
+)
 -- Normal, Visual, Select, Operator-pending
 map("", "<F6>", ":tnext<CR>", { desc = "Tnext" })
 map("n", "qa", ":qa!<CR>", { desc = "Force Quit" })
 map("n", "H", "^", { desc = "Head" })
 map("n", "L", "$", { desc = "Tail" })
 
-
 -- clipboard
-map({ "" }, "<leader>y", "\"+y", { desc = "Copy To System Clipboard" })
+map({ "" }, "<leader>y", '"+y', { desc = "Copy To System Clipboard" })
 -- Disable the middle mouse button for pasting
 -- mode "" is equal to "n", "v", "o"
 map({ "", "c", "i" }, "<MiddleMouse>", "<Nop>")
@@ -80,13 +87,11 @@ map({ "", "c", "i" }, "<2-MiddleMouse>", "<Nop>")
 map({ "", "c", "i" }, "<3-MiddleMouse>", "<Nop>")
 map({ "", "c", "i" }, "<4-MiddleMouse>", "<Nop>")
 
-
 -- tabnew/edit/close/only
 map("n", "<leader>to", ":tabonly<CR>", { silent = false, desc = "Tab Only" })
 map("n", "<leader>tc", ":tabclose<CR>", { silent = false, desc = "Tab Close" })
 map("n", "<leader>te", ":tabedit <C-R>=expand('%:p:h')<CR>/", { silent = false, desc = "Tab Edit" })
 map("n", "<leader>tn", ":$tabnew", { silent = false, desc = "Tab New" })
-
 
 --[=[
 -- Coc/函数跳转
@@ -121,7 +126,6 @@ map("i", "<c-space>", "coc#refresh()", {silent = true, expr = true})
 -- map("x", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 -- map("n", "<leader>f", "<Plug>(coc-format-selected)", {silent = true})
 --]=]
-
 
 -- commenting default support by neovim 0.10
 --[[

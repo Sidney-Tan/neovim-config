@@ -7,7 +7,7 @@ return {
       dap.adapters.gdb = {
         type = "executable",
         command = "gdb",
-        args = { "-i", "dap" }
+        args = { "-i", "dap" },
       }
       dap.configurations.c = {
         {
@@ -15,7 +15,7 @@ return {
           type = "gdb",
           request = "launch",
           program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
           end,
           cwd = "${workspaceFolder}",
           stopAtBeginningOfMainSubprogram = false,
@@ -27,37 +27,37 @@ return {
           type = "gdb",
           request = "launch",
           program = function()
-            return vim.fn.input('Path to executable: ', vim.fn.getcwd() .. '/', 'file')
+            return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
           end,
           cwd = "${workspaceFolder}",
           stopAtBeginningOfMainSubprogram = false,
         },
       }
-      local repl = require 'dap.repl'
-      repl.commands = vim.tbl_extend('force', repl.commands, {
+      local repl = require("dap.repl")
+      repl.commands = vim.tbl_extend("force", repl.commands, {
         -- Add a new alias for the existing .exit command
-        exit = { 'exit', '.exit', '.bye' },
+        exit = { "exit", ".exit", ".bye" },
         -- Add your own commands; run `.echo hello world` to invoke
         -- this function with the text "hello world"
         custom_commands = {
-          ['.echo'] = function(text)
+          [".echo"] = function(text)
             dap.repl.append(text)
           end,
           -- Hook up a new command to an existing dap function
-          ['.restart'] = dap.restart,
+          [".restart"] = dap.restart,
         },
       })
     end,
     keys = {
-      { "<leader>bb", ":! g++ -g %:t<CR>",                               desc = "Compile With g++" },
+      { "<leader>bb", ":! g++ -g %:t<CR>", desc = "Compile With g++" },
       { "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", desc = "Dap Toggle BreakPoint" },
-      { "<F5>",       "<cmd>lua require('dap').continue()<CR>",          desc = "Dap Continue" },
-      { "<F10>",      "<cmd>lua require('dap').step_over()<CR>",         desc = "Dap Step Over" },
-      { "<F12>",      "<cmd>lua require('dap').step_into()<CR>",         desc = "Dap Step Into" },
-      { "<leader>do", "<cmd>lua require('dap').step_out()<CR>",          desc = "Dap Step Out" },
-      { "<leader>dg", "<cmd>lua require('dap').repl.toggle()<CR>",       desc = "Dap Repl Toggle" },
-      { "<leader>dl", "<cmd>lua require('dap').run_last()<CR>",          desc = "Dap Run Last" },
-      { "<leader>dc", "<cmd>lua require('dap').terminate()<CR>",         desc = "Dap Terminate" },
+      { "<F5>", "<cmd>lua require('dap').continue()<CR>", desc = "Dap Continue" },
+      { "<F10>", "<cmd>lua require('dap').step_over()<CR>", desc = "Dap Step Over" },
+      { "<F12>", "<cmd>lua require('dap').step_into()<CR>", desc = "Dap Step Into" },
+      { "<leader>do", "<cmd>lua require('dap').step_out()<CR>", desc = "Dap Step Out" },
+      { "<leader>dg", "<cmd>lua require('dap').repl.toggle()<CR>", desc = "Dap Repl Toggle" },
+      { "<leader>dl", "<cmd>lua require('dap').run_last()<CR>", desc = "Dap Run Last" },
+      { "<leader>dc", "<cmd>lua require('dap').terminate()<CR>", desc = "Dap Terminate" },
     },
   },
 
@@ -76,7 +76,7 @@ return {
         open = "o",
         remove = "d",
         repl = "r",
-        toggle = "t"
+        toggle = "t",
       },
       layouts = {
         {
@@ -89,7 +89,7 @@ return {
             },
             { id = "breakpoints", size = 0.25 },
             --{ id = "stacks",      size = 0.25 },
-            { id = "watches",     size = 0.25 },
+            { id = "watches", size = 0.25 },
           },
           size = 40,
           position = "left", -- Can be "left" or "right"
@@ -115,7 +115,7 @@ return {
           step_into = "",
           step_out = "",
           step_over = "",
-          terminate = ""
+          terminate = "",
         },
       },
     },

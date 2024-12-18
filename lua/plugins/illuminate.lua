@@ -5,12 +5,12 @@ return {
     -- You'll also get <a-n> and <a-p> as keymaps to move between references.
     enabled = true,
     config = function()
-      require('illuminate').configure({
+      require("illuminate").configure {
         -- providers: provider used to get references in the buffer, ordered by priority
         providers = {
-          'lsp',
-          'treesitter',
-          'regex',
+          "lsp",
+          "treesitter",
+          "regex",
         },
         -- delay: delay in milliseconds
         delay = 100,
@@ -20,9 +20,9 @@ return {
         filetype_overrides = {},
         -- filetypes_denylist: filetypes to not illuminate, this overrides filetypes_allowlist
         filetypes_denylist = {
-          'dirbuf',
-          'dirvish',
-          'fugitive',
+          "dirbuf",
+          "dirvish",
+          "fugitive",
         },
         -- filetypes_allowlist: filetypes to illuminate, this is overridden by filetypes_denylist
         -- You must set filetypes_denylist = {} to override the defaults to allow filetypes_allowlist to take effect
@@ -55,10 +55,12 @@ return {
         -- should_enable: a callback that overrides all other settings to
         -- enable/disable illumination. This will be called a lot so don't do
         -- anything expensive in it.
-        should_enable = function(bufnr) return true end,
+        should_enable = function(bufnr)
+          return true
+        end,
         -- case_insensitive_regex: sets regex case sensitivity
         case_insensitive_regex = false,
-      })
+      }
       -- set highlight for the cursor word
       vim.api.nvim_command("hi! link IlluminatedWordText CursorLine")
       vim.api.nvim_command("hi! link IlluminatedWordRead CursorLine")

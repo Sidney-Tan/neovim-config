@@ -51,7 +51,9 @@ return {
       -- Set to a function that returns `true` if a buffer should be enabled
       -- and `false` if the buffer should be disabled
       -- You can still enable disabled by this option buffer with `:NeoCodeium enable_buffer`
-      filter = function(bufnr) return true end,
+      filter = function(bufnr)
+        return true
+      end,
       -- Set to `false` to disable suggestions in buffers with specific filetypes
       -- You can still enable disabled by this option buffer with `:NeoCodeium enable_buffer`
       filetypes = {
@@ -61,16 +63,51 @@ return {
         ["."] = false,
       },
       -- List of directories and files to detect workspace root directory for Codeium chat
-      root_dir = { ".bzr", ".git", ".hg", ".svn", "_FOSSIL_", "package.json" }
+      root_dir = { ".bzr", ".git", ".hg", ".svn", "_FOSSIL_", "package.json" },
     },
     keys = {
-      { "<leader><Tab>", "<cmd>lua require('neocodeium').accept()<CR>",              mode = { "i" },      desc = "Codeium Accept" },
-      { "<C-]>",         "<cmd>lua require('neocodeium').clear()<CR>",               mode = { "i" },      desc = "Codeium Clear" },
-      { "<M-]>",         "<cmd>lua require('neocodeium').cycle_or_complete(1)<CR>",  mode = { "i" },      desc = "Codeium Next" },
-      { "<M-[>",         "<cmd>lua require('neocodeium').cycle_or_complete(-1)<CR>", mode = { "i" },      desc = "Codeium Previous" },
-      { "<C-k>",         "<cmd>lua require('neocodeium').accept_word()<CR>",         mode = { "i" },      desc = "Codeium Accept Word" },
-      { "<C-l>",         "<cmd>lua require('neocodeium').accept_line()<CR>",         mode = { "i" },      desc = "Codeium Accept Line" },
-      { "<leader>cc",    "<cmd>NeoCodeium toggle<CR>",                               mode = { "n", "i" }, desc = "Codeium Toggle" },
+      {
+        "<leader><Tab>",
+        "<cmd>lua require('neocodeium').accept()<CR>",
+        mode = { "i" },
+        desc = "Codeium Accept",
+      },
+      {
+        "<C-]>",
+        "<cmd>lua require('neocodeium').clear()<CR>",
+        mode = { "i" },
+        desc = "Codeium Clear",
+      },
+      {
+        "<M-]>",
+        "<cmd>lua require('neocodeium').cycle_or_complete(1)<CR>",
+        mode = { "i" },
+        desc = "Codeium Next",
+      },
+      {
+        "<M-[>",
+        "<cmd>lua require('neocodeium').cycle_or_complete(-1)<CR>",
+        mode = { "i" },
+        desc = "Codeium Previous",
+      },
+      {
+        "<C-k>",
+        "<cmd>lua require('neocodeium').accept_word()<CR>",
+        mode = { "i" },
+        desc = "Codeium Accept Word",
+      },
+      {
+        "<C-l>",
+        "<cmd>lua require('neocodeium').accept_line()<CR>",
+        mode = { "i" },
+        desc = "Codeium Accept Line",
+      },
+      {
+        "<leader>cc",
+        "<cmd>NeoCodeium toggle<CR>",
+        mode = { "n", "i" },
+        desc = "Codeium Toggle",
+      },
     },
   },
 }

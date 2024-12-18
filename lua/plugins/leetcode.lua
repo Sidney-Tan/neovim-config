@@ -104,6 +104,6 @@ return {
     },
     keys = {
       { "<leader>lc", "<cmd>Leet<CR>", desc = "LeetCode" },
-    }
-  }
+    },
+  },
 }

@@ -4,15 +4,65 @@ return {
     lazy = true,
     keys = {
       -- builtin lsp diagnostic
-      { "<leader>gp", function() vim.diagnostic.goto_prev() end,                                     desc = "Diagnostic Goto Previous" },
-      { "<leader>gn", function() vim.diagnostic.goto_next() end,                                     desc = "Diagnostic Goto Next" },
+      {
+        "<leader>gp",
+        function()
+          vim.diagnostic.goto_prev()
+        end,
+        desc = "Diagnostic Goto Previous",
+      },
+      {
+        "<leader>gn",
+        function()
+          vim.diagnostic.goto_next()
+        end,
+        desc = "Diagnostic Goto Next",
+      },
       -- builtin lsp 函数跳转
-      { "gd",         function() vim.lsp.buf.definition() end,                                       desc = "Lsp Definition" },
-      { "gt",         function() vim.lsp.buf.type_definition() end,                                  desc = "Lsp Type Definition" },
-      { "gi",         function() vim.lsp.buf.implementation() end,                                   desc = "Lsp Implementation" },
-      { "gr",         function() vim.lsp.buf.references() end,                                       desc = "Lsp references" },
-      { "<leader>dt", function() vim.diagnostic.enable(not vim.diagnostic.is_enabled()) end,         mode = { "n", "i" },              desc = "Diagnostic Toggle" },
-      { "<leader>L",  function() vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled()) end, mode = { "n", "i" },              desc = "Inlay Hint Toggle" },
+      {
+        "gd",
+        function()
+          vim.lsp.buf.definition()
+        end,
+        desc = "Lsp Definition",
+      },
+      {
+        "gt",
+        function()
+          vim.lsp.buf.type_definition()
+        end,
+        desc = "Lsp Type Definition",
+      },
+      {
+        "gi",
+        function()
+          vim.lsp.buf.implementation()
+        end,
+        desc = "Lsp Implementation",
+      },
+      {
+        "gr",
+        function()
+          vim.lsp.buf.references()
+        end,
+        desc = "Lsp references",
+      },
+      {
+        "<leader>dt",
+        function()
+          vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+        end,
+        mode = { "n", "i" },
+        desc = "Diagnostic Toggle",
+      },
+      {
+        "<leader>L",
+        function()
+          vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled())
+        end,
+        mode = { "n", "i" },
+        desc = "Inlay Hint Toggle",
+      },
       --{ "<F7>",       function() vim.lsp.buf.format() end,                                           desc = "Format" },
     },
   },
@@ -20,7 +70,7 @@ return {
     "williamboman/mason-lspconfig.nvim",
     lazy = false,
     config = function()
-      require("mason-lspconfig").setup({
+      require("mason-lspconfig").setup {
         -- Lsp supported, Formatter not supported.
         ensure_installed = {
           "clangd",
@@ -32,9 +82,9 @@ return {
           "gopls",
           "sqlls",
         },
-      })
+      }
       local lspconfig = require("lspconfig")
-      local capabilities = require('cmp_nvim_lsp').default_capabilities()
+      local capabilities = require("cmp_nvim_lsp").default_capabilities()
       require("mason-lspconfig").setup_handlers {
         -- The first entry (without a key) will be the default handler
         -- and will be called for each installed server that doesn't have
@@ -70,9 +120,9 @@ return {
             settings = {
               Lua = {
                 diagnostics = {
-                  globals = { "vim" }
-                }
-              }
+                  globals = { "vim" },
+                },
+              },
             },
             capabilities = capabilities,
           }
@@ -84,9 +134,9 @@ return {
               basedpyright = {
                 analysis = {
                   typeCheckingMode = "basic",
-                }
-              }
-            }
+                },
+              },
+            },
           }
         end,
         ["cmake"] = function()
@@ -116,7 +166,7 @@ return {
         end,
       }
       -- Diagnostic from virtual text to float
-      vim.diagnostic.config({ virtual_text = false })
+      vim.diagnostic.config { virtual_text = false }
       -- Use tiny-inline-diagnostic alternative.
       -- vim.cmd [[
       -- augroup DiagnosticFloat
@@ -147,15 +197,15 @@ return {
     "williamboman/mason.nvim",
     event = "VeryLazy",
     config = function()
-      require("mason").setup({
+      require("mason").setup {
         ui = {
           icons = {
             package_installed = "✓",
             package_pending = "➜",
-            package_uninstalled = "✗"
-          }
-        }
-      })
-    end
+            package_uninstalled = "✗",
+          },
+        },
+      }
+    end,
   },
 }

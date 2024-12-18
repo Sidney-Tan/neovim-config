@@ -42,5 +42,5 @@ return {
     lazy = false,
     priority = 996, -- needs to be loaded before lsp
     opts = {},
-  }
+  },
 }

@@ -5,7 +5,7 @@ return {
     -- follow latest release.
     version = "v2.*", -- Replace <CurrentMajor> by the latest released major (first number of latest release)
     -- install jsregexp (optional!:).
-    build = "make install_jsregexp"
+    build = "make install_jsregexp",
     -- local ls = require("luasnip")
     -- map({"i"}, "<C-K>", function() ls.expand() end, {silent = true})
     -- map({"i", "s"}, "<C-L>", function() ls.jump( 1) end, {silent = true})

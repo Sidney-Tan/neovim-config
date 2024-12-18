@@ -6,7 +6,7 @@ return {
     --lazy = false,
     --priority = 997,
     build = function()
-      local ts_update = require('nvim-treesitter.install').update({ with_sync = true })
+      local ts_update = require("nvim-treesitter.install").update { with_sync = true }
       ts_update()
     end,
     --dependencies = {
@@ -14,7 +14,7 @@ return {
     --},
     config = function()
       local configs = require("nvim-treesitter.configs")
-      configs.setup({
+      configs.setup {
         ensure_installed = {
           "c",
           "cpp",
@@ -36,7 +36,7 @@ return {
         sync_install = false,
         highlight = { enable = true },
         indent = { enable = true },
-      })
+      }
     end,
   },
 }

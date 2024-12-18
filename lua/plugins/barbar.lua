@@ -8,7 +8,6 @@ return {
     end,
     opts = {
 
-
       -- WARN: do not copy everything below into your config!
       --       It is just an example of what configuration options there are.
       --       The defaults are suitable for most people.
@@ -33,7 +32,7 @@ return {
 
       -- A buffer to this direction will be focused (if it exists) when closing the current buffer.
       -- Valid options are 'left' (the default), 'previous', and 'right'
-      focus_on_close = 'left',
+      focus_on_close = "left",
 
       -- Hide inactive buffers and file extensions. Other options are `alternate`, `current`, and `visible`.
       hide = { extensions = false, inactive = false, alternate = true, current = false, visible = true },
@@ -52,18 +51,18 @@ return {
         -- Valid options to display the buffer index and -number are `true`, 'superscript' and 'subscript'
         buffer_index = true,
         buffer_number = false,
-        button = '',
+        button = "",
         -- Enables / disables diagnostic symbols
         diagnostics = {
-          [vim.diagnostic.severity.ERROR] = { enabled = true, icon = 'ﬀ' },
+          [vim.diagnostic.severity.ERROR] = { enabled = true, icon = "ﬀ" },
           [vim.diagnostic.severity.WARN] = { enabled = false },
           [vim.diagnostic.severity.INFO] = { enabled = false },
           [vim.diagnostic.severity.HINT] = { enabled = false },
         },
         gitsigns = {
-          added = { enabled = true, icon = '+' },
-          changed = { enabled = true, icon = '~' },
-          deleted = { enabled = true, icon = '-' },
+          added = { enabled = true, icon = "+" },
+          changed = { enabled = true, icon = "~" },
+          deleted = { enabled = true, icon = "-" },
         },
         filetype = {
           -- Sets the icon's highlight group.
@@ -73,24 +72,24 @@ return {
           -- Requires `nvim-web-devicons` if `true`
           enabled = true,
         },
-        separator = { left = '▎', right = '' },
+        separator = { left = "▎", right = "" },
 
         -- If true, add an additional separator at the end of the buffer list
         separator_at_end = true,
 
         -- Configure the icons on the bufferline when modified or pinned.
         -- Supports all the base icon options.
-        modified = { button = '●' },
-        pinned = { button = '', filename = true },
+        modified = { button = "●" },
+        pinned = { button = "", filename = true },
 
         -- Use a preconfigured buffer appearance— can be 'default', 'powerline', or 'slanted'
-        preset = 'default',
+        preset = "default",
 
         -- Configure the icons on the bufferline based on the visibility of a buffer.
         -- Supports all the base icon options, plus `modified` and `pinned`.
         alternate = { filetype = { enabled = false } },
         current = { buffer_index = true },
-        inactive = { button = '×' },
+        inactive = { button = "×" },
         visible = { modified = { buffer_number = false } },
       },
 
@@ -122,17 +121,17 @@ return {
         -- Use the default values: {event = 'BufWinLeave', text = nil}
         NvimTree = true,
         -- Or, specify the text used for the offset:
-        undotree = { text = 'undotree' },
+        undotree = { text = "undotree" },
         -- Or, specify the event which the sidebar executes when leaving:
-        ['neo-tree'] = { event = 'BufWipeout' },
+        ["neo-tree"] = { event = "BufWipeout" },
         -- Or, specify both
-        Outline = { event = 'BufWinLeave', text = 'symbols-outline' },
+        Outline = { event = "BufWinLeave", text = "symbols-outline" },
       },
 
       -- New buffer letters are assigned in this order. This order is
       -- optimal for the qwerty keyboard layout but might need adjustment
       -- for other layouts.
-      letters = 'asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP',
+      letters = "asdfjkl;ghnmxcvbziowerutyqpASDFJKLGHNMXCVBZIOWERUTYQP",
 
       -- Sets the name of unnamed buffers. By default format is "[Buffer X]"
       -- where X is the buffer number. But only a static string is accepted here.
@@ -140,22 +139,33 @@ return {
     },
 
     keys = {
-      { "<leader>be",  "<cmd>lua require('telescope.builtin').find_files()<CR>", mode = "n", desc = "Telescope Find Files" },
-      { "<leader>be",  ":e <C-R>=expand('%:p:h')<CR>/",                          mode = "n", silent = false,               desc = "Buffer Edit" },
-      { "<leader>pin", "<Cmd>BufferPin<CR>",                                     mode = "n", desc = "BufferPin" },
-      { "<leader>bp",  "<Cmd>BufferPrevious<CR>",                                mode = "n", desc = "Buffer Previous" },
-      { "<leader>bn",  "<Cmd>BufferNext<CR>",                                    mode = "n", desc = "Buffer Next" },
-      { "<leader>bc",  "<Cmd>BufferClose<CR>",                                   mode = "n", desc = "Buffer Close" },
-      { "<leader>1",   "<Cmd>BufferGoto 1<CR>",                                  mode = "n", desc = "BufferGoto 1" },
-      { "<leader>2",   "<Cmd>BufferGoto 2<CR>",                                  mode = "n", desc = "BufferGoto 2" },
-      { "<leader>3",   "<Cmd>BufferGoto 3<CR>",                                  mode = "n", desc = "BufferGoto 3" },
-      { "<leader>4",   "<Cmd>BufferGoto 4<CR>",                                  mode = "n", desc = "BufferGoto 4" },
-      { "<leader>5",   "<Cmd>BufferGoto 5<CR>",                                  mode = "n", desc = "BufferGoto 5" },
-      { "<leader>6",   "<Cmd>BufferGoto 6<CR>",                                  mode = "n", desc = "BufferGoto 6" },
-      { "<leader>7",   "<Cmd>BufferGoto 7<CR>",                                  mode = "n", desc = "BufferGoto 7" },
-      { "<leader>8",   "<Cmd>BufferGoto 8<CR>",                                  mode = "n", desc = "BufferGoto 8" },
-      { "<leader>9",   "<Cmd>BufferGoto 9<CR>",                                  mode = "n", desc = "BufferGoto 9" },
-      { "<leader>0",   "<Cmd>BufferLast<CR>",                                    mode = "n", desc = "BufferGoto Last" },
-    }
+      {
+        "<leader>be",
+        "<cmd>lua require('telescope.builtin').find_files()<CR>",
+        mode = "n",
+        desc = "Telescope Find Files",
+      },
+      {
+        "<leader>be",
+        ":e <C-R>=expand('%:p:h')<CR>/",
+        mode = "n",
+        silent = false,
+        desc = "Buffer Edit",
+      },
+      { "<leader>pin", "<Cmd>BufferPin<CR>", mode = "n", desc = "BufferPin" },
+      { "<leader>bp", "<Cmd>BufferPrevious<CR>", mode = "n", desc = "Buffer Previous" },
+      { "<leader>bn", "<Cmd>BufferNext<CR>", mode = "n", desc = "Buffer Next" },
+      { "<leader>bc", "<Cmd>BufferClose<CR>", mode = "n", desc = "Buffer Close" },
+      { "<leader>1", "<Cmd>BufferGoto 1<CR>", mode = "n", desc = "BufferGoto 1" },
+      { "<leader>2", "<Cmd>BufferGoto 2<CR>", mode = "n", desc = "BufferGoto 2" },
+      { "<leader>3", "<Cmd>BufferGoto 3<CR>", mode = "n", desc = "BufferGoto 3" },
+      { "<leader>4", "<Cmd>BufferGoto 4<CR>", mode = "n", desc = "BufferGoto 4" },
+      { "<leader>5", "<Cmd>BufferGoto 5<CR>", mode = "n", desc = "BufferGoto 5" },
+      { "<leader>6", "<Cmd>BufferGoto 6<CR>", mode = "n", desc = "BufferGoto 6" },
+      { "<leader>7", "<Cmd>BufferGoto 7<CR>", mode = "n", desc = "BufferGoto 7" },
+      { "<leader>8", "<Cmd>BufferGoto 8<CR>", mode = "n", desc = "BufferGoto 8" },
+      { "<leader>9", "<Cmd>BufferGoto 9<CR>", mode = "n", desc = "BufferGoto 9" },
+      { "<leader>0", "<Cmd>BufferLast<CR>", mode = "n", desc = "BufferGoto Last" },
+    },
   },
 }
