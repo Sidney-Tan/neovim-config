@@ -202,5 +202,5 @@ My [plugin configs](https://github.com/Sidney-Tan/neovim-config/tree/master/lua/
 
 ## License
 
-This project is licensed under the MIT License. See the [LICENSE](https://github.com/Sidney-Tan/neovim-config/LICENSE) file for details.
+This project is licensed under the MIT License. See the [LICENSE](https://github.com/Sidney-Tan/neovim-config/blob/master/LICENSE) file for details.
 
