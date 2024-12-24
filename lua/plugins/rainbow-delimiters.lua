@@ -1,7 +1,7 @@
 return {
   {
     "HiPhish/rainbow-delimiters.nvim",
-    lazy = true,
+    lazy = false,
     -- This plugin requires the treesitter when neovim is startup.
     -- I close this plugin because when I set "BufReadPost" or "lazy=false" in the treesitter settings,
     -- the startup speed of neovim is slower(+100ms).

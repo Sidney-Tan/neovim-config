@@ -32,7 +32,7 @@ One of the features that has made the most impact on me:
 
 ## Colorscheme
 
-My favorite colorscheme is **[gruvbox](https://github.com/ellisonleao/gruvbox.nvim)**:
+My favorite colorscheme is **[gruvbox](https://github.com/ellisonleao/gruvbox.nvim)** or **[gruvbox-material](https://github.com/sainnhe/gruvbox-material)**:
 
 ![](https://camo.githubusercontent.com/668e11d96516adbe306407d3b58a0fb22aaffbf98bc1d7edfa086ad17cd2feef/68747470733a2f2f692e706f7374696d672e63632f667933746e4746742f67727576626f782d7468656d65732e706e67)
 ## Lsp Related
