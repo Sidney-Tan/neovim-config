@@ -62,13 +62,13 @@ return {
         case_insensitive_regex = false,
       }
       -- set highlight for the cursor word
-      vim.api.nvim_command("hi! link IlluminatedWordText multiple_cursors_visual")
-      vim.api.nvim_command("hi! link IlluminatedWordRead multiple_cursors_visual")
-      vim.api.nvim_command("hi! link IlluminatedWordWrite multiple_cursors_visual")
+      -- vim.api.nvim_command("hi! link IlluminatedWordText multiple_cursors_visual")
+      -- vim.api.nvim_command("hi! link IlluminatedWordRead multiple_cursors_visual")
+      -- vim.api.nvim_command("hi! link IlluminatedWordWrite multiple_cursors_visual")
       
-      -- vim.api.nvim_command("hi! link IlluminatedWordText CursorLine")
-      -- vim.api.nvim_command("hi! link IlluminatedWordRead CursorLine")
-      -- vim.api.nvim_command("hi! link IlluminatedWordWrite CursorLine")
+      vim.api.nvim_command("hi! link IlluminatedWordText CursorLine")
+      vim.api.nvim_command("hi! link IlluminatedWordRead CursorLine")
+      vim.api.nvim_command("hi! link IlluminatedWordWrite CursorLine")
     end,
   },
 }
