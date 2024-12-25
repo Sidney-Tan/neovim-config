@@ -86,7 +86,7 @@ return {
           "basedpyright",
           "cmake",
           "bashls",
-          "jsonls",
+          "jqls",
           "gopls",
           "sqlls",
         },
@@ -157,8 +157,8 @@ return {
             capabilities = capabilities,
           }
         end,
-        ["jsonls"] = function()
-          lspconfig.jsonls.setup {
+        ["jqls"] = function()
+          lspconfig.jqls.setup {
             capabilities = capabilities,
           }
         end,
@@ -198,6 +198,7 @@ return {
         "clang-format",
         "stylua",
         "codespell",
+        "jq",
       },
     },
   },

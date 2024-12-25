@@ -58,7 +58,7 @@ I have also installed the language servers as follows:
 + cmake
 + gopls
 + html
-+ jsonls
++ jqls
 + lua_ls
 
 ## Plugin List

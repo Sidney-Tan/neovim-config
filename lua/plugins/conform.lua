@@ -8,7 +8,7 @@ return {
       c = { "clang-format" },
       lua = { "stylua" },
       go = { lsp_format = "fallback" },
-      json = { lsp_format = "fallback" },
+      json = { "jq" },
       bash = { "shfmt" },
       sql = { "sql_formatter" },
       cmake = { "cmakelang" },
