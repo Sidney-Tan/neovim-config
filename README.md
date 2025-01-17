@@ -198,6 +198,7 @@ My [plugin configs](https://github.com/Sidney-Tan/neovim-config/tree/master/lua/
 + [Vim basic configs](https://github.com/Sidney-Tan/neovim-config/blob/master/lua/configs/basic.lua) 
 + [Lazy configs](https://github.com/Sidney-Tan/neovim-config/blob/master/lua/configs/lazy.lua)
 + [Keymaps in addiction to my plugin configs](https://github.com/Sidney-Tan/neovim-config/blob/master/lua/configs/keybindings.lua)
++ [Autocmds](https://github.com/Sidney-Tan/neovim-config/blob/master/lua/configs/autocmds.lua)
 + [Vimscript form configs](https://github.com/Sidney-Tan/neovim-config/blob/master/lua/configs/vim-config.lua) 
 
 ## License
