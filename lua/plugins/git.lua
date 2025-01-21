@@ -102,7 +102,7 @@ return {
     lazy = true,
     keys = {
       { "<leader>git", "<cmd>DiffviewFileHistory<CR>", mode = "n", desc = "Diffview All File" },
-      { "<leader>gitc", "<cmd>DiffviewFileHistory<CR>", mode = "n", desc = "Diffview Current File" },
+      { "<leader>gitc", "<cmd>DiffviewFileHistory %<CR>", mode = "n", desc = "Diffview Current File" },
     },
   },
 }
