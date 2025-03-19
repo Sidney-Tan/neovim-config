@@ -20,6 +20,11 @@ Open Neovim with this config:
 NVIM_APPNAME=Sidney-Tan/neovim-config/ nvim
 ```
 
+Or set it as the global config:
+```sh
+git clone git@github.com:Sidney-Tan/neovim-config ~/.config/nvim
+```
+
 ## Plugin Manager
 
 I have switched the plugin manager from **[packer.nvim](https://github.com/wbthomason/packer.nvim)** to **[lazy.nvim](https://github.com/folke/lazy.nvim)**.
