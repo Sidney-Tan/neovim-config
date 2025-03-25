@@ -59,7 +59,7 @@ return {
       })
     end,
     keys = {
-      { "<leader>bb", ":! g++ -g %:t<CR>", desc = "Compile With g++" },
+      { "<leader>bb", ":! clang++ -g -O0 -std=c++17 %:t<CR>", desc = "Compile With g++" },
       { "<leader>db", "<cmd>lua require('dap').toggle_breakpoint()<CR>", desc = "Dap Toggle BreakPoint" },
       { "<F5>", "<cmd>lua require('dap').continue()<CR>", desc = "Dap Continue" },
       { "<F10>", "<cmd>lua require('dap').step_over()<CR>", desc = "Dap Step Over" },
