@@ -200,6 +200,7 @@ return {
         "stylua",
         "codespell",
         "jq",
+        "codelldb",
       },
     },
   },

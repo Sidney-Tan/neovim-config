@@ -4,22 +4,30 @@ return {
     lazy = true,
     config = function()
       local dap = require("dap")
-      dap.adapters.gdb = {
+      dap.adapters.codelldb = {
         type = "executable",
-        command = "gdb",
-        args = { "-i", "dap" },
+        command = "codelldb", -- or if not in $PATH: "/absolute/path/to/codelldb"
+        -- On windows you may have to uncomment this:
+        -- detached = false,
       }
-      dap.configurations.c = {
+      dap.configurations.cpp = {
         {
-          name = "Launch",
-          type = "gdb",
+          name = "Launch file",
+          type = "codelldb",
           request = "launch",
           program = function()
             return vim.fn.input("Path to executable: ", vim.fn.getcwd() .. "/", "file")
           end,
           cwd = "${workspaceFolder}",
-          stopAtBeginningOfMainSubprogram = false,
+          stopOnEntry = false,
         },
+      }
+      dap.configurations.c = dap.configurations.cpp
+     --[[
+      dap.adapters.gdb = {
+        type = "executable",
+        command = "gdb",
+        args = { "-i", "dap" },
       }
       dap.configurations.cpp = {
         {
@@ -33,6 +41,8 @@ return {
           stopAtBeginningOfMainSubprogram = false,
         },
       }
+      dap.configurations.c = dap.configurations.cpp
+      --]]
       local repl = require("dap.repl")
       repl.commands = vim.tbl_extend("force", repl.commands, {
         -- Add a new alias for the existing .exit command
