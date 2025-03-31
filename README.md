@@ -51,8 +51,10 @@ I have switched the lsp support from **[coc](https://github.com/neoclide/coc.nvi
   + Easily install and manage LSP servers, DAP servers, linters, and formatters.
 + [mason-lspconfig](https://github.com/williamboman/mason-lspconfig.nvim)
   + it bridges mason with the nvim-lspconfig plugin - making it easier to use both plugins together.
-+ [nvim-cmp](https://github.com/hrsh7th/nvim-cmp)
-  + A completion engine plugin for neovim written in Lua. 
++ [blink.cmp](https://github.com/Saghen/blink.cmp)
+  + A completion engine plugin with support for LSPs and external sources that updates on every keystroke with minimal overhead (0.5-4ms async).
+  + It uses an optional custom fuzzy matcher to easily handle 20k+ items.
+  + I have switched from **[nvim-cmp](https://github.com/hrsh7th/nvim-cmp)** to **[blink.cmp](https://github.com/Saghen/blink.cmp)** because it's faster and the community is more active.
 + [nvim-treesitter](https://github.com/nvim-treesitter/nvim-treesitter)
   + The goal of nvim-treesitter is both to provide a simple and easy way to use the interface for tree-sitter in Neovim and to provide some basic functionality such as highlighting based on it.
 
@@ -65,6 +67,7 @@ I have also installed the language servers as follows:
 + html
 + jqls
 + lua_ls
++ sqlls
 
 ## Plugin List
 
@@ -118,6 +121,7 @@ I have also installed the language servers as follows:
 ### git
 
 + [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
++ [sindrets/diffview.nvim](https://dotfyle.com/plugins/sindrets/diffview.nvim)
 ### icon
 
 + [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
