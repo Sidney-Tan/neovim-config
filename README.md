@@ -65,7 +65,7 @@ I have also installed the language servers as follows:
 + cmake
 + gopls
 + html
-+ jqls
++ jsonls
 + lua_ls
 + sqlls
 
