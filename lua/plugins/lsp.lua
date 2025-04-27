@@ -7,14 +7,14 @@ return {
       {
         "<leader>gp",
         function()
-          vim.diagnostic.goto_prev()
+          vim.diagnostic.jump { count = -1, float = true }
         end,
         desc = "Diagnostic Goto Previous",
       },
       {
         "<leader>gn",
         function()
-          vim.diagnostic.goto_next()
+          vim.diagnostic.jump { count = 1, float = true }
         end,
         desc = "Diagnostic Goto Next",
       },
@@ -93,7 +93,7 @@ return {
       }
       local lspconfig = require("lspconfig")
       --local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local capabilities = require('blink.cmp').get_lsp_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
       require("mason-lspconfig").setup_handlers {
         -- The first entry (without a key) will be the default handler
         -- and will be called for each installed server that doesn't have
