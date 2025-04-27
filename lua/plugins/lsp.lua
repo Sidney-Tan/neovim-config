@@ -138,7 +138,6 @@ return {
         end,
         ["basedpyright"] = function()
           lspconfig.basedpyright.setup {
-            capabilities = capabilities,
             settings = {
               basedpyright = {
                 analysis = {
@@ -146,6 +145,7 @@ return {
                 },
               },
             },
+            capabilities = capabilities,
           }
         end,
         ["cmake"] = function()
