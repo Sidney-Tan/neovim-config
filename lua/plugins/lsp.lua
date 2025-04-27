@@ -178,6 +178,7 @@ return {
         -- Diagnostic from virtual text to float
         virtual_text = false,
         -- If you want icons for diagnostic errors, you'll need to define them somewhere:
+        --[[
         signs = {
           text = {
             [vim.diagnostic.severity.ERROR] = "",
@@ -186,6 +187,7 @@ return {
             [vim.diagnostic.severity.HINT] = "󰌵",
           },
         },
+        --]]
       }
       -- Use tiny-inline-diagnostic alternative.
       -- vim.cmd [[
