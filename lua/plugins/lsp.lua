@@ -2,6 +2,60 @@ return {
   {
     "neovim/nvim-lspconfig",
     lazy = true,
+    config = function()
+      --local capabilities = require("cmp_nvim_lsp").default_capabilities()
+      local capabilities = require("blink.cmp").get_lsp_capabilities()
+      vim.lsp.config("*", {
+        capabilities = capabilities,
+        root_markers = { ".git", ".hg" },
+      })
+      vim.lsp.config("clangd", {
+        root_markers = { ".clang-format", "compile_commands.json", "BLADE_ROOT" },
+        filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "cxx", "hpp" },
+      })
+      vim.lsp.config("lua_ls", {
+        settings = {
+          Lua = {
+            diagnostics = {
+              globals = { "vim" },
+            },
+          },
+        },
+      })
+      vim.lsp.config("basedpyright", {
+        settings = {
+          basedpyright = {
+            analysis = {
+              typeCheckingMode = "basic",
+            },
+          },
+        },
+      })
+
+      vim.diagnostic.config {
+        -- Diagnostic from virtual text to float
+        virtual_text = false,
+        -- If you want icons for diagnostic errors, you'll need to define them somewhere:
+        --[[
+        signs = {
+          text = {
+            [vim.diagnostic.severity.ERROR] = "",
+            [vim.diagnostic.severity.WARN] = "",
+            [vim.diagnostic.severity.INFO] = "",
+            [vim.diagnostic.severity.HINT] = "󰌵",
+          },
+        },
+        --]]
+      }
+      -- Use tiny-inline-diagnostic alternative.
+      -- vim.cmd [[
+      -- augroup DiagnosticFloat
+      --   autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})
+      -- augroup END]]
+
+      -- Inlay-hints
+      vim.lsp.inlay_hint.enable(true, { 0 })
+    end,
     keys = {
       -- builtin lsp diagnostic
       {
@@ -75,9 +129,11 @@ return {
     },
   },
   {
-    "williamboman/mason-lspconfig.nvim",
+    "mason-org/mason-lspconfig.nvim",
     lazy = false,
     config = function()
+      require("lspconfig")
+      -- mason-lspconfig
       require("mason-lspconfig").setup {
         -- Lsp supported, Formatter not supported.
         ensure_installed = {
@@ -90,113 +146,25 @@ return {
           "gopls",
           "sqlls",
         },
+        -- Whether installed servers should automatically be enabled via `:h vim.lsp.enable()`.
+        --
+        -- To exclude certain servers from being automatically enabled:
+        -- ```lua
+        --   automatic_enable = {
+        --     exclude = { "rust_analyzer", "ts_ls" }
+        --   }
+        -- ```
+        --
+        -- To only enable certain servers to be automatically enabled:
+        -- ```lua
+        --   automatic_enable = {
+        --     "lua_ls",
+        --     "vimls"
+        --   }
+        -- ```
+        ---@type boolean | string[] | { exclude: string[] }
+        automatic_enable = true,
       }
-      local lspconfig = require("lspconfig")
-      --local capabilities = require("cmp_nvim_lsp").default_capabilities()
-      local capabilities = require("blink.cmp").get_lsp_capabilities()
-      require("mason-lspconfig").setup_handlers {
-        -- The first entry (without a key) will be the default handler
-        -- and will be called for each installed server that doesn't have
-        -- a dedicated handler.
-        function(server_name) -- default handler (optional)
-          require("lspconfig")[server_name].setup {}
-        end,
-        -- Next, you can provide a dedicated handler for specific servers.
-        -- For example, a handler override for the `rust_analyzer`:
-        ["clangd"] = function()
-          lspconfig.clangd.setup {
-            cmd = {
-              "clangd",
-              -- "--header-insertion=never",
-              -- "--all-scopes-completion",
-              -- "--completion-style=detailed",
-            },
-            filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "cxx", "hpp" },
-            -- root_pattern(
-            -- '.clangd',
-            -- '.clang-tidy',
-            -- '.clang-format',
-            -- 'compile_commands.json',
-            -- 'compile_flags.txt',
-            -- 'configure.ac',
-            -- '.git'
-            -- )
-            capabilities = capabilities,
-          }
-        end,
-        ["lua_ls"] = function()
-          lspconfig.lua_ls.setup {
-            settings = {
-              Lua = {
-                diagnostics = {
-                  globals = { "vim" },
-                },
-              },
-            },
-            capabilities = capabilities,
-          }
-        end,
-        ["basedpyright"] = function()
-          lspconfig.basedpyright.setup {
-            settings = {
-              basedpyright = {
-                analysis = {
-                  typeCheckingMode = "basic",
-                },
-              },
-            },
-            capabilities = capabilities,
-          }
-        end,
-        ["cmake"] = function()
-          lspconfig.cmake.setup {
-            capabilities = capabilities,
-          }
-        end,
-        ["bashls"] = function()
-          lspconfig.bashls.setup {
-            capabilities = capabilities,
-          }
-        end,
-        ["jsonls"] = function()
-          lspconfig.jsonls.setup {
-            capabilities = capabilities,
-          }
-        end,
-        ["gopls"] = function()
-          lspconfig.gopls.setup {
-            capabilities = capabilities,
-          }
-        end,
-        ["sqlls"] = function()
-          lspconfig.sqlls.setup {
-            capabilities = capabilities,
-          }
-        end,
-      }
-      vim.diagnostic.config {
-        -- Diagnostic from virtual text to float
-        virtual_text = false,
-        -- If you want icons for diagnostic errors, you'll need to define them somewhere:
-        --[[
-        signs = {
-          text = {
-            [vim.diagnostic.severity.ERROR] = "",
-            [vim.diagnostic.severity.WARN] = "",
-            [vim.diagnostic.severity.INFO] = "",
-            [vim.diagnostic.severity.HINT] = "󰌵",
-          },
-        },
-        --]]
-      }
-      -- Use tiny-inline-diagnostic alternative.
-      -- vim.cmd [[
-      -- augroup DiagnosticFloat
-      --   autocmd CursorHold * lua vim.diagnostic.open_float(nil, {focus=false})
-      -- augroup END]]
-
-      -- Inlay-hints
-      vim.lsp.inlay_hint.enable(true, { 0 })
     end,
   },
   {
@@ -218,7 +186,7 @@ return {
     },
   },
   {
-    "williamboman/mason.nvim",
+    "mason-org/mason.nvim",
     event = "VeryLazy",
     config = function()
       require("mason").setup {

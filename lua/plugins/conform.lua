@@ -11,7 +11,7 @@ return {
       json = { "jq" },
       bash = { "shfmt" },
       sql = { "sql_formatter" },
-      cmake = { "cmakelang" },
+      cmake = { "cmake_format" },
       -- Conform will run multiple formatters sequentially
       python = { "isort", "black" },
       -- -- You can use a function here to determine the formatters dynamically
