@@ -10,7 +10,15 @@ return {
         root_markers = { ".git", ".hg" },
       })
       vim.lsp.config("clangd", {
-        root_markers = { ".clang-format", "compile_commands.json", "BLADE_ROOT" },
+        root_markers = {
+          "BLADE_ROOT",
+          ".clang-format",
+          "compile_commands.json",
+          ".clangd",
+          ".clang-tidy",
+          "compile_flags.txt",
+          "configure.ac",
+        },
         filetypes = { "c", "cpp", "objc", "objcpp", "cuda", "proto", "cxx", "hpp" },
       })
       vim.lsp.config("lua_ls", {
