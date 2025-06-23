@@ -96,7 +96,7 @@ return {
         desc = "Lsp Type Definition",
       },
       {
-        "gi",
+        "gp",
         function()
           vim.lsp.buf.implementation()
         end,
