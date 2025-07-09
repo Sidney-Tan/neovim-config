@@ -5,7 +5,7 @@ return {
     ---@module 'render-markdown'
     ---@type render.md.UserConfig
     opts = {},
-    ft = "markdown",
+    ft = { "markdown", "codecompanion" },
     keys = {
       { "<leader>md", "<cmd>lua require('render-markdown').toggle()<cr>", desc = "Render Markdown Toggle" },
     },
