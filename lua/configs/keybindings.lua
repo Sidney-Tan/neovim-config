@@ -33,7 +33,8 @@ local line_toggle = function()
 end
 map("", "<leader>lt", line_toggle, { desc = "Line Toggle" })
 
--- Interview mode, close codeium and use float diagnostic.
+-- Interview mode, close codeium.
+--[=[
 local interview_mode = function()
   if require("neocodeium").get_status() ~= 0 then
     --vim.diagnostic.config({ virtual_text = true })
@@ -49,6 +50,7 @@ local interview_mode = function()
   end
 end
 map("", "<leader>im", interview_mode, { desc = "Interview Mode" })
+--]=]
 
 -- Normal
 map(

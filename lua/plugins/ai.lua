@@ -17,8 +17,10 @@ return {
   },
   --]]
   -- Replace codeium with neocodeium.
+
   {
     "monkoose/neocodeium",
+    enabled = false,
     lazy = true,
     --event = "VeryLazy",
     opts = {
@@ -107,6 +109,60 @@ return {
         "<cmd>NeoCodeium toggle<CR>",
         mode = { "n", "i" },
         desc = "Codeium Toggle",
+      },
+    },
+  },
+
+  {
+    "zbirenbaum/copilot.lua",
+    enabled = true,
+    event = "InsertEnter",
+    opts = {
+      suggestion = {
+        enabled = true,
+        auto_trigger = false,
+        hide_during_completion = true,
+        debounce = 75,
+        trigger_on_accept = true,
+        keymap = {
+          accept = "<M-l>",
+          accept_word = false,
+          accept_line = false,
+          next = "<M-]>",
+          prev = "<M-[>",
+          dismiss = "<C-]>",
+        },
+        lookahead = 1,
+      },
+    },
+  },
+
+  {
+    "olimorris/codecompanion.nvim",
+    enabled = true,
+    lazy = true,
+    opts = {
+      strategies = {
+        -- Change the default chat adapter
+        chat = {
+          adapter = "copilot",
+          show_model_choices = true,
+          model = "claude-sonnet-4-20250514",
+        },
+        inline = {
+          adapter = "copilot",
+          show_model_choices = true,
+          model = "claude-sonnet-4-20250514",
+        },
+        cmd = {
+          adapter = "copilot",
+          show_model_choices = true,
+          model = "claude-sonnet-4-20250514",
+        },
+      },
+      opts = {
+        -- Set debug logging
+        log_level = "DEBUG",
       },
     },
   },
