@@ -140,30 +140,100 @@ return {
   {
     "olimorris/codecompanion.nvim",
     enabled = true,
-    lazy = true,
-    opts = {
-      strategies = {
-        -- Change the default chat adapter
-        chat = {
-          adapter = "copilot",
-          show_model_choices = true,
-          model = "claude-sonnet-4-20250514",
+    event = "VeryLazy",
+    config = function()
+      require("codecompanion").setup {
+        strategies = {
+          -- Change the default chat adapter
+          chat = {
+            adapter = "copilot",
+            show_model_choices = true,
+            --model = "claude-sonnet-4-20250514",
+            keymaps = {
+              send = {
+                modes = { n = { "<C-s>", "<CR>" }, i = "<C-s>" },
+                opts = {},
+              },
+              close = {
+                modes = { n = "<C-c>", i = "<C-c>" },
+                opts = {},
+              },
+              -- Add further custom keymaps here
+            },
+          },
+          inline = {
+            adapter = "copilot",
+            show_model_choices = true,
+            --model = "claude-sonnet-4-20250514",
+            keymaps = {
+              accept_change = {
+                modes = { n = "ga" },
+                description = "Accept the suggested change",
+              },
+              reject_change = {
+                modes = { n = "gr" },
+                description = "Reject the suggested change",
+              },
+            },
+            --[[
+              The plugin uses the inline LLM you've specified in your config to determine if the response should:
+              replace - replace a visual selection you've made
+              add - be added in the current buffer at the cursor position
+              before - to be added in the current buffer before the cursor position
+              new - be placed in a new buffer
+              chat - be placed in a chat buffer
+            --]]
+          },
+          cmd = {
+            adapter = "copilot",
+            show_model_choices = true,
+            --model = "claude-sonnet-4-20250514",
+          },
         },
-        inline = {
-          adapter = "copilot",
-          show_model_choices = true,
-          model = "claude-sonnet-4-20250514",
+        opts = {
+          -- Set debug logging
+          log_level = "DEBUG",
         },
-        cmd = {
-          adapter = "copilot",
-          show_model_choices = true,
-          model = "claude-sonnet-4-20250514",
-        },
-      },
-      opts = {
-        -- Set debug logging
-        log_level = "DEBUG",
-      },
+        display = {
+          chat = {
+            show_settings = true,
+          }
+        }
+      }
+      -- Expand 'cc' into 'CodeCompanion' in the command line
+      vim.cmd([[cab cc CodeCompanion]])
+    end,
+    keys = {
+      { "<leader>cc", ":CodeCompanion", mode = { "n" }, desc = "CodeCompanion Inline" },
+      { "<leader>ct", "<cmd>CodeCompanionChat Toggle<cr>", mode = { "n", "v" }, desc = "CodeCompanionChat Toggle" },
+      { "<leader>ca", "<cmd>CodeCompanionChat Add<cr>", mode = { "v" }, desc = "CodeCompanionChat Add" },
+      { "<leader>cmd", ":CodeCompanionCmd", mode = { "n" }, desc = "CodeCompanion Cmd" },
+      { "<leader>cw", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "CodeCompanion Actions" },
+      { "<leader>cg", "<cmd>CodeCompanion generate code here<cr>", mode = { "n" }, desc = "CodeCompanion Complete" },
+      -- ga, Accept an inline edit
+      -- gr, Reject an inline edit
+      -- gy, The fastest way to copy an LLM's code output is with gy. This will yank the nearest codeblock.
+      -- gx, to clear the chat buffer's contents
+      -- gf, fold any codeblocks in the chat buffer
+      -- gc, insert a codeblock in the chat buffer
+      -- [[ ]], You can quickly move between responses in the chat buffer using [[ or ]].
+      -- @insert_edit_into_file tool, combined with the #buffer variable or /buffer slash command, enables an LLM to modify code in a Neovim buffer. This is especially useful if you do not wish to manually apply an LLM's suggestions yourself. Simply tag it in the chat buffer with @files or @insert_edit_into_file.
     },
+    --[[ 
+    Slash commands, accessed via /, run commands to insert additional context into the chat buffer:
+      /buffer - Insert open buffers
+      /fetch - Insert URL contents
+      /file - Insert a file
+      /quickfix - Insert entries from the quickfix list
+      /help - Insert content from help tags
+      /now - Insert the current date and time
+      /symbols - Insert symbols from a selected file
+      /terminal - Insert terminal output
+    Variables
+      #{buffer}, Shares the current buffer's code. This can also receive parameters
+      #{lsp} - Shares LSP information and code for the current buffer
+    Agent/Tools
+      @{file}, Contains the create_file, file_search, get_changed_files, grep_search, insert_edit_into_file and read_file tools
+    --]]
   },
 }

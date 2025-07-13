@@ -95,6 +95,7 @@ map("n", "<leader>tc", ":tabclose<CR>", { silent = false, desc = "Tab Close" })
 map("n", "<leader>te", ":tabedit <C-R>=expand('%:p:h')<CR>/", { silent = false, desc = "Tab Edit" })
 map("n", "<leader>tn", ":$tabnew", { silent = false, desc = "Tab New" })
 
+
 --[=[
 -- Coc/函数跳转
 map("n", "gd", "<Plug>(coc-definition)", opt)

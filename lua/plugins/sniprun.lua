@@ -10,7 +10,7 @@ return {
     keys = {
       { "<leader>r", "<Plug>SnipRun", mode = { "x" }, desc = "Snip Run" },
       { "<leader>r", "ggVG<Plug>SnipRun", mode = { "n" }, desc = "Snip Run All" },
-      { "<leader>cl", "<Plug>SnipClose", mode = { "n", "x" }, desc = "Snip Close" },
+      { "<leader>sc", "<Plug>SnipClose", mode = { "n", "x" }, desc = "Snip Close" },
     },
   },
 }
