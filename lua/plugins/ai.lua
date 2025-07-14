@@ -101,7 +101,6 @@ return {
       -- gy, The fastest way to copy an LLM's code output is with gy. This will yank the nearest codeblock.
       -- gx, to clear the chat buffer's contents
       -- gf, fold any codeblocks in the chat buffer
-      -- gc, insert a codeblock in the chat buffer
       -- [[ ]], You can quickly move between responses in the chat buffer using [[ or ]].
       -- @insert_edit_into_file tool, combined with the #buffer variable or /buffer slash command, enables an LLM to modify code in a Neovim buffer. This is especially useful if you do not wish to manually apply an LLM's suggestions yourself. Simply tag it in the chat buffer with @files or @insert_edit_into_file.
     },
