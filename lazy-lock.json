@@ -4,7 +4,7 @@
   "alpha-nvim": { "branch": "main", "commit": "2b3cbcdd980cae1e022409289245053f62fb50f6" },
   "barbar.nvim": { "branch": "master", "commit": "ae333d18e5e52540903f8432dc32abdadb21496f" },
   "blink.cmp": { "branch": "main", "commit": "bae4bae0eedd1fa55f34b685862e94a222d5c6f8" },
-  "codecompanion.nvim": { "branch": "main", "commit": "19d665a9b13c0b05652c359c4302465b8b2543be" },
+  "codecompanion.nvim": { "branch": "main", "commit": "92b4884f62d251ad8432c6f6ccee0786f42bb68a" },
   "conform.nvim": { "branch": "master", "commit": "973f3cb73887d510321653044791d7937c7ec0fa" },
   "copilot.lua": { "branch": "master", "commit": "0f2fd3829dd27d682e46c244cf48d9715726f612" },
   "diffview.nvim": { "branch": "main", "commit": "4516612fe98ff56ae0415a259ff6361a89419b0a" },
