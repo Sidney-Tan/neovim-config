@@ -35,6 +35,9 @@ return {
             adapter = "copilot",
             show_model_choices = true,
             --model = "claude-sonnet-4-20250514",
+            opts = {
+              completion_provider = "blink", -- blink|cmp|coc|default
+            },
             keymaps = {
               send = {
                 modes = { n = { "<C-s>", "<CR>" }, i = "<C-s>" },
@@ -83,8 +86,8 @@ return {
         display = {
           chat = {
             show_settings = true,
-          }
-        }
+          },
+        },
       }
       -- Expand 'cc' into 'CodeCompanion' in the command line
       vim.cmd([[cab cc CodeCompanion]])
@@ -236,5 +239,4 @@ return {
     },
   },
   --]]
-
 }

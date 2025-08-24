@@ -34,6 +34,7 @@ return {
           "go",
           "html",
           "yaml",
+          "regex",
         },
         sync_install = false,
         highlight = { enable = true },
