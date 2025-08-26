@@ -31,7 +31,7 @@ vim.o.smartindent = true
 -- 搜索大小写不敏感，除非包含大写
 vim.o.ignorecase = true
 vim.o.smartcase = true
--- 搜索不要高亮
+-- 搜索高亮
 vim.o.hlsearch = false
 -- 边输入边搜索
 vim.o.incsearch = true
@@ -81,8 +81,6 @@ vim.o.pumheight = 10
 vim.o.showtabline = 2
 -- 使用增强状态栏插件后不再需要 vim 的模式提示
 vim.o.showmode = false
--- Highlight search results
-vim.opt.hlsearch = true
 -- set the number of empty lines at the bottom
 vim.o.cmdheight = 1
 
