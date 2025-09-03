@@ -18,7 +18,11 @@ return {
     },
   },
 
-  { "echasnovski/mini.icons", lazy = true, version = "*" },
+  {
+    "nvim-mini/mini.icons",
+    lazy = true,
+    version = "*",
+  },
 
   {
     "nvim-tree/nvim-web-devicons",
