@@ -34,7 +34,8 @@ return {
           chat = {
             adapter = {
               name = "copilot",
-              model = "gpt-5",
+              model = "gemini-2.5-pro",
+              --model = "gpt-5",
               --model = "gpt-4.1",
               --model = "claude-sonnet-4",
             },
@@ -55,6 +56,7 @@ return {
               name = "copilot",
               model = "gpt-4.1",
               --model = "gpt-5",
+              --model = "gemini-2.5-pro",
               --model = "claude-sonnet-4",
             },
             keymaps = {
@@ -81,6 +83,7 @@ return {
               name = "copilot",
               model = "gpt-4.1",
               --model = "gpt-5",
+              --model = "gemini-2.5-pro",
               --model = "claude-sonnet-4",
             },
           },
