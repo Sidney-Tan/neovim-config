@@ -32,11 +32,11 @@ return {
         strategies = {
           -- Change the default chat adapter
           chat = {
-            adapter = "copilot",
-            show_model_choices = true,
-            --model = "claude-sonnet-4-20250514",
-            opts = {
-              completion_provider = "blink", -- blink|cmp|coc|default
+            adapter = {
+              name = "copilot",
+              model = "gpt-5",
+              --model = "gpt-4.1",
+              --model = "claude-sonnet-4",
             },
             keymaps = {
               send = {
@@ -51,9 +51,12 @@ return {
             },
           },
           inline = {
-            adapter = "copilot",
-            show_model_choices = true,
-            --model = "claude-sonnet-4-20250514",
+            adapter = {
+              name = "copilot",
+              model = "gpt-4.1",
+              --model = "gpt-5",
+              --model = "claude-sonnet-4",
+            },
             keymaps = {
               accept_change = {
                 modes = { n = "ga" },
@@ -74,9 +77,12 @@ return {
             --]]
           },
           cmd = {
-            adapter = "copilot",
-            show_model_choices = true,
-            --model = "claude-sonnet-4-20250514",
+            adapter = {
+              name = "copilot",
+              model = "gpt-4.1",
+              --model = "gpt-5",
+              --model = "claude-sonnet-4",
+            },
           },
         },
         opts = {
@@ -86,6 +92,16 @@ return {
         display = {
           chat = {
             show_settings = true,
+          },
+        },
+        adapters = {
+          http = {
+            copilot = function()
+              return require("codecompanion.adapters").extend("copilot", {})
+            end,
+            opts = {
+              show_model_choices = true,
+            },
           },
         },
       }
@@ -99,7 +115,7 @@ return {
       { "<leader>cmd", ":CodeCompanionCmd", mode = { "n" }, desc = "CodeCompanion Cmd" },
       { "<leader>cw", "<cmd>CodeCompanionActions<cr>", mode = { "n", "v" }, desc = "CodeCompanion Actions" },
       { "<leader>cg", "<cmd>CodeCompanion generate code here<cr>", mode = { "n" }, desc = "CodeCompanion Complete" },
-      -- ga, Accept an inline edit
+      -- ga, Accept an inline edit / select adapter/model in chat buffer.
       -- gr, Reject an inline edit
       -- gy, The fastest way to copy an LLM's code output is with gy. This will yank the nearest codeblock.
       -- gx, to clear the chat buffer's contents
