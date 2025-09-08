@@ -67,7 +67,9 @@ I have also installed the language servers as follows:
 + html
 + jsonls
 + lua_ls
++ rust_analyzer
 + sqlls
++ vimls
 
 ## Plugin List
 
@@ -76,6 +78,7 @@ I have also installed the language servers as follows:
 + 🔒 Lockfile `lazy-lock.json` is used to keep track of installed plugins.
 ### ai
 
++ [olimorris/codecompanion.nvim](https://dotfyle.com/plugins/olimorris/codecompanion.nvim)
 + [monkoose/neocodeium](https://dotfyle.com/plugins/monkoose/neocodeium)
 ### code-runner
 
@@ -94,21 +97,22 @@ I have also installed the language servers as follows:
 + [kawre/leetcode.nvim](https://dotfyle.com/plugins/kawre/leetcode.nvim)
 ### completion
 
++ [zbirenbaum/copilot.lua](https://dotfyle.com/plugins/zbirenbaum/copilot.lua)
 + [hrsh7th/nvim-cmp](https://dotfyle.com/plugins/hrsh7th/nvim-cmp)
 ### cursorline
 
 + [RRethy/vim-illuminate](https://dotfyle.com/plugins/RRethy/vim-illuminate)
 ### debugging
 
-+ [mfussenegger/nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
 + [rcarriga/nvim-dap-ui](https://dotfyle.com/plugins/rcarriga/nvim-dap-ui)
++ [mfussenegger/nvim-dap](https://dotfyle.com/plugins/mfussenegger/nvim-dap)
 ### diagnostics
 
 + [folke/trouble.nvim](https://dotfyle.com/plugins/folke/trouble.nvim)
 ### editing-support
 
-+ [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
 + [HiPhish/rainbow-delimiters.nvim](https://dotfyle.com/plugins/HiPhish/rainbow-delimiters.nvim)
++ [windwp/nvim-autopairs](https://dotfyle.com/plugins/windwp/nvim-autopairs)
 ### file-explorer
 
 + [nvim-neo-tree/neo-tree.nvim](https://dotfyle.com/plugins/nvim-neo-tree/neo-tree.nvim)
@@ -120,13 +124,12 @@ I have also installed the language servers as follows:
 + [nvim-telescope/telescope.nvim](https://dotfyle.com/plugins/nvim-telescope/telescope.nvim)
 ### git
 
-+ [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
 + [sindrets/diffview.nvim](https://dotfyle.com/plugins/sindrets/diffview.nvim)
++ [lewis6991/gitsigns.nvim](https://dotfyle.com/plugins/lewis6991/gitsigns.nvim)
 ### icon
 
-+ [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
-+ [echasnovski/mini.icons](https://dotfyle.com/plugins/echasnovski/mini.icons)
 + [ziontee113/icon-picker.nvim](https://dotfyle.com/plugins/ziontee113/icon-picker.nvim)
++ [nvim-tree/nvim-web-devicons](https://dotfyle.com/plugins/nvim-tree/nvim-web-devicons)
 ### indent
 
 + [lukas-reineke/indent-blankline.nvim](https://dotfyle.com/plugins/lukas-reineke/indent-blankline.nvim)
@@ -135,13 +138,10 @@ I have also installed the language servers as follows:
 + [folke/which-key.nvim](https://dotfyle.com/plugins/folke/which-key.nvim)
 ### lsp
 
++ [simrat39/symbols-outline.nvim](https://dotfyle.com/plugins/simrat39/symbols-outline.nvim)
++ [hedyhli/outline.nvim](https://dotfyle.com/plugins/hedyhli/outline.nvim)
 + [rachartier/tiny-inline-diagnostic.nvim](https://dotfyle.com/plugins/rachartier/tiny-inline-diagnostic.nvim)
 + [neovim/nvim-lspconfig](https://dotfyle.com/plugins/neovim/nvim-lspconfig)
-+ [hedyhli/outline.nvim](https://dotfyle.com/plugins/hedyhli/outline.nvim)
-+ [simrat39/symbols-outline.nvim](https://dotfyle.com/plugins/simrat39/symbols-outline.nvim)
-### lsp-installer
-
-+ [williamboman/mason.nvim](https://dotfyle.com/plugins/williamboman/mason.nvim)
 ### lua-colorscheme
 
 + [ellisonleao/gruvbox.nvim](https://dotfyle.com/plugins/ellisonleao/gruvbox.nvim)
@@ -153,6 +153,7 @@ I have also installed the language servers as follows:
 + [ThePrimeagen/harpoon](https://dotfyle.com/plugins/ThePrimeagen/harpoon)
 ### media
 
++ [HakonHarnes/img-clip.nvim](https://dotfyle.com/plugins/HakonHarnes/img-clip.nvim)
 + [3rd/image.nvim](https://dotfyle.com/plugins/3rd/image.nvim)
 ### motion
 
@@ -169,8 +170,8 @@ I have also installed the language servers as follows:
 + [karb94/neoscroll.nvim](https://dotfyle.com/plugins/karb94/neoscroll.nvim)
 ### snippet
 
-+ [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
 + [dcampos/nvim-snippy](https://dotfyle.com/plugins/dcampos/nvim-snippy)
++ [L3MON4D3/LuaSnip](https://dotfyle.com/plugins/L3MON4D3/LuaSnip)
 ### startup
 
 + [goolord/alpha-nvim](https://dotfyle.com/plugins/goolord/alpha-nvim)
@@ -189,10 +190,10 @@ I have also installed the language servers as follows:
 + [akinsho/toggleterm.nvim](https://dotfyle.com/plugins/akinsho/toggleterm.nvim)
 ### utility
 
-+ [echasnovski/mini.nvim](https://dotfyle.com/plugins/echasnovski/mini.nvim)
++ [folke/noice.nvim](https://dotfyle.com/plugins/folke/noice.nvim)
++ [rcarriga/nvim-notify](https://dotfyle.com/plugins/rcarriga/nvim-notify)
 + [stevearc/dressing.nvim](https://dotfyle.com/plugins/stevearc/dressing.nvim)
 + [sitiom/nvim-numbertoggle](https://dotfyle.com/plugins/sitiom/nvim-numbertoggle)
-+ [rcarriga/nvim-notify](https://dotfyle.com/plugins/rcarriga/nvim-notify)
 
 ## Plugin Configs
 
