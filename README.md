@@ -6,7 +6,7 @@
 
 ## Install Instructions
 
- > Install requires Neovim 0.10+. Always review the code before installing a configuration.
+ > Install requires Neovim 0.11+. Always review the code before installing a configuration.
 
 Clone the repository and install the plugins:
 
@@ -73,7 +73,7 @@ I have also installed the language servers as follows:
 
 ### [lazy-lock.json](https://github.com/Sidney-Tan/neovim-config/blob/master/lazy-lock.json):
 
-+ 🔒 Lockfile `lazy-lock.json` to keep track of installed plugins.
++ 🔒 Lockfile `lazy-lock.json` is used to keep track of installed plugins.
 ### ai
 
 + [monkoose/neocodeium](https://dotfyle.com/plugins/monkoose/neocodeium)
