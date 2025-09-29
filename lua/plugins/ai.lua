@@ -94,7 +94,7 @@ return {
         },
         display = {
           chat = {
-            show_settings = true,
+            show_settings = false,
           },
         },
         adapters = {
