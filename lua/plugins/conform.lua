@@ -26,7 +26,8 @@ return {
       -- Use the "*" filetype to run formatters on all filetypes.
       -- -- Conform will run the first available formatter
       -- javascript = { "prettierd", "prettier", stop_after_first = true },
-      ["*"] = { "codespell" },
+      -- I don't want to correct the spelling.
+      -- ["*"] = { "codespell" },
       -- Use the "_" filetype to run formatters on filetypes that don't
       -- have other formatters configured.
       ["_"] = { "trim_whitespace" },
