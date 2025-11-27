@@ -27,6 +27,7 @@ return {
     "olimorris/codecompanion.nvim",
     enabled = true,
     event = "VeryLazy",
+    tag = "v17.33.0",
     config = function()
       require("codecompanion").setup {
         strategies = {
